@@ -142,7 +142,7 @@ a {
 }
 
 .hero::before {
-  background-image: url("assets/hero.PNG");
+  background-image: url("assets/hero.jpg");
   background-position: center;
   background-size: cover;
   opacity: 0.9;
@@ -353,7 +353,6 @@ h3 {
   border: 1px solid rgba(18, 58, 52, 0.16);
   border-radius: var(--radius);
   background: var(--cream);
-  cursor: pointer;
   transition:
     transform 160ms ease,
     border-color 160ms ease,
@@ -361,15 +360,10 @@ h3 {
 }
 
 .service-card:hover,
-.service-card:focus-visible {
+.service-card:focus-within {
   transform: translateY(-3px);
   border-color: rgba(242, 162, 58, 0.72);
   box-shadow: 0 18px 42px rgba(7, 22, 19, 0.12);
-}
-
-.service-card:focus-visible {
-  outline: 3px solid rgba(242, 162, 58, 0.32);
-  outline-offset: 4px;
 }
 
 .service-card:nth-child(even) {
@@ -384,6 +378,53 @@ h3 {
 
 .service-card:nth-child(even) p {
   color: rgba(255, 253, 248, 0.78);
+}
+
+.service-card__toggle {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.service-card__toggle:focus-visible {
+  outline: 3px solid rgba(242, 162, 58, 0.32);
+  outline-offset: 4px;
+}
+
+.service-card__toggle .card-arrow {
+  transition: transform 200ms ease;
+}
+
+.service-card__toggle[aria-expanded="true"] .card-arrow {
+  transform: rotate(90deg);
+}
+
+.service-card__panel[hidden] {
+  display: block;
+}
+
+.service-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--gold-2);
+  font-weight: 900;
+}
+
+.service-card:nth-child(even) .service-card__cta {
+  color: var(--gold);
+}
+
+.service-card__cta:hover {
+  text-decoration: underline;
 }
 
 .conversion-strip {
@@ -850,24 +891,71 @@ h3 {
     width: 100%;
   }
 
+  /* La tarjeta "Áreas de consulta" repite los mismos servicios que
+     #servicios muestra en detalle más abajo: en una columna es scroll
+     redundante, así que se oculta y se deja solo la sección completa. */
   .hero-card {
-    min-height: 390px;
+    display: none;
   }
 
-  .hero-card h2 {
-    margin-top: 120px;
+  .services,
+  .team-section,
+  .faq-section,
+  .contact,
+  .process {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .service-card {
-    min-height: 240px;
+    min-height: 0;
+    padding: 20px;
   }
 
   .card-arrow {
-    margin-bottom: 34px;
+    margin-bottom: 16px;
   }
 
+  /* Acordeón: los títulos de servicio se listan compactos y el detalle
+     se despliega recién al tocarlos, así se evita mostrar las 5
+     descripciones completas de entrada en la columna móvil. */
+  .service-card__panel[hidden] {
+    display: none;
+  }
+
+  .faq-grid article {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .steps article {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .steps span {
+    margin-bottom: 20px;
+  }
+
+  /* Carrusel horizontal: las fotos quedan en su tamaño original
+     (retrato completo) pero se deslizan de a una en vez de apilarse
+     verticalmente, para no alargar el scroll de la página. */
   .team-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
   }
 
   .team-card,

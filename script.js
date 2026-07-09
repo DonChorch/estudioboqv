@@ -1,6 +1,6 @@
 ﻿const CONFIG = {
   whatsappNumber: "5492215942574",
-  emailRecipient: "info@boqv.com.ar",
+  emailRecipient: "administracion@boqv.com.ar",
   formEndpoint: "",
   defaultMessage:
     "Hola BOQV, quiero hacer una consulta legal. Vengo desde la landing.",
@@ -21,8 +21,21 @@ const trackedParams = [
 
 window.dataLayer = window.dataLayer || [];
 
+const TRACKING_KEY = "boqv_tracking";
+const TRACKING_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+
+function readStoredTracking() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(TRACKING_KEY) || "{}");
+    if (!raw.savedAt || Date.now() - raw.savedAt > TRACKING_TTL_MS) return {};
+    return raw.params || {};
+  } catch (error) {
+    return {};
+  }
+}
+
 const query = new URLSearchParams(window.location.search);
-const storedParams = JSON.parse(sessionStorage.getItem("boqv_tracking") || "{}");
+const storedParams = readStoredTracking();
 const landingMeta = {
   page_location: window.location.href,
   page_path: window.location.pathname,
@@ -34,7 +47,14 @@ trackedParams.forEach((param) => {
   if (value) storedParams[param] = value;
 });
 
-sessionStorage.setItem("boqv_tracking", JSON.stringify(storedParams));
+try {
+  localStorage.setItem(
+    TRACKING_KEY,
+    JSON.stringify({ savedAt: Date.now(), params: storedParams })
+  );
+} catch (error) {
+  /* almacenamiento no disponible (modo privado): se sigue sin persistencia */
+}
 
 document.querySelectorAll("[data-param]").forEach((input) => {
   input.value = storedParams[input.dataset.param] || "";
@@ -160,15 +180,25 @@ function goToFormWithService(service) {
   }, 450);
 }
 
-document.querySelectorAll("[data-service]").forEach((card) => {
-  card.addEventListener("click", () => {
-    goToFormWithService(card.dataset.service);
-  });
+document.querySelectorAll(".service-card__toggle").forEach((toggle) => {
+  const panel = document.getElementById(toggle.getAttribute("aria-controls"));
 
-  card.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!expanded));
+    if (panel) panel.hidden = expanded;
+
+    pushLeadEvent("service_card_toggle", {
+      service: toggle.querySelector("h3")?.textContent.trim() || "",
+      expanded: !expanded,
+    });
+  });
+});
+
+document.querySelectorAll(".service-card__cta[data-service]").forEach((cta) => {
+  cta.addEventListener("click", (event) => {
     event.preventDefault();
-    goToFormWithService(card.dataset.service);
+    goToFormWithService(cta.dataset.service);
   });
 });
 
@@ -196,6 +226,11 @@ form?.addEventListener("submit", async (event) => {
     } else if (CONFIG.emailRecipient) {
       window.location.href = buildMailtoUrl(data);
     }
+
+    pushLeadEvent("lead_form_success", {
+      service: data.servicio || "",
+      delivery: CONFIG.formEndpoint ? "endpoint" : "mailto",
+    });
 
     status.textContent = CONFIG.formEndpoint ? "Consulta recibida. BOQV se pondrá en contacto para coordinar una primera revisión." : "Se abrió un correo dirigido a BOQV con los datos de tu consulta.";
     form.reset();
