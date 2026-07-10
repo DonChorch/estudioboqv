@@ -271,6 +271,17 @@ h3 {
   font-weight: 700;
 }
 
+.thanks {
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - 82px);
+  padding: clamp(44px, 8vw, 96px) clamp(18px, 5vw, 64px);
+}
+
+.thanks__content {
+  max-width: 640px;
+}
+
 .hero-card {
   position: relative;
   overflow: hidden;
@@ -342,11 +353,13 @@ h3 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 14px;
 }
 
 .service-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 300px;
   padding: 26px;
@@ -393,6 +406,11 @@ h3 {
   cursor: pointer;
 }
 
+.service-card__toggle h3 {
+  min-height: 2.3em;
+  overflow-wrap: break-word;
+}
+
 .service-card__toggle:focus-visible {
   outline: 3px solid rgba(242, 162, 58, 0.32);
   outline-offset: 4px;
@@ -406,15 +424,22 @@ h3 {
   transform: rotate(90deg);
 }
 
+.service-card__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .service-card__panel[hidden] {
-  display: block;
+  display: flex;
 }
 
 .service-card__cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 14px;
+  margin-top: auto;
+  padding-top: 14px;
   color: var(--gold-2);
   font-weight: 900;
 }
@@ -472,6 +497,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  max-width: 1200px;
+  margin-inline: 0;
 }
 
 .faq-grid article {
@@ -498,7 +525,7 @@ h3 {
   justify-content: center;
   width: 42px;
   height: 42px;
-  margin-bottom: 58px;
+  margin-bottom: 20px;
   border: 1px solid var(--gold);
   border-radius: 999px;
   color: var(--gold);
@@ -600,7 +627,9 @@ h3 {
 .steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 28px;
+  max-width: 1200px;
+  margin-inline: 0;
 }
 
 .steps article {
@@ -702,6 +731,10 @@ h3 {
   padding: 16px;
   border: 1px solid rgba(18, 58, 52, 0.14);
   border-radius: var(--radius);
+}
+
+.art-fields[hidden] {
+  display: none;
 }
 
 .art-fields legend {

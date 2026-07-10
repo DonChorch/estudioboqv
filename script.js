@@ -82,13 +82,11 @@ function buildMailtoUrl(data) {
     ["Nombre y apellido", data.nombre],
     ["Telefono / WhatsApp", data.telefono],
     ["Email", data.email],
-    ["Localidad", data.localidad],
     ["Servicio", data.servicio],
     ["Descripcion", data.descripcion],
     ["ART - En blanco", data.art_en_blanco],
     ["ART - Atencion", data.art_atencion],
     ["ART - Alta", data.art_alta],
-    ["ART - Lesion", data.art_lesion],
     ["UTM source", data.utm_source],
     ["UTM medium", data.utm_medium],
     ["UTM campaign", data.utm_campaign],
@@ -160,6 +158,39 @@ document.querySelectorAll("main section[id]").forEach((section) => {
 const form = document.querySelector("#leadForm");
 const status = document.querySelector("#formStatus");
 const serviceSelect = form?.querySelector('select[name="servicio"]');
+const artFields = document.getElementById("artFields");
+const descriptionField = form?.querySelector('textarea[name="descripcion"]');
+const phoneField = form?.querySelector('input[name="telefono"]');
+const nameField = form?.querySelector('input[name="nombre"]');
+
+phoneField?.addEventListener("input", () => {
+  phoneField.value = phoneField.value.replace(/\D/g, "");
+});
+
+nameField?.addEventListener("input", () => {
+  nameField.value = nameField.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñÜü' -]/g, "");
+});
+
+const DEFAULT_DESCRIPTION_PLACEHOLDER = "Ej.: qué ocurrió, cuándo, y qué documentación tenés disponible.";
+const descriptionPlaceholders = {
+  "Derecho Comercial": "Ej.: tipo de contrato u operación, con quién, y qué problema o duda tenés.",
+  "Derecho Laboral y ART": "Ej.: qué ocurrió, cuándo, si ya hubo intimaciones, alta médica o documentación disponible.",
+  "Derecho Administrativo": "Ej.: qué trámite o reclamo es, ante qué organismo, y si recibiste alguna notificación o intimación.",
+  "Derecho de Daños": "Ej.: qué pasó, cuándo, si hay testigos, denuncia o documentación del hecho.",
+  Sucesiones: "Ej.: vínculo con la persona fallecida, si hay testamento, y en qué estado está el trámite.",
+  "Asesoramiento Empresarial": "Ej.: qué necesita tu empresa (contratos, sociedad, conflicto) y contexto general.",
+};
+
+function syncServiceFields() {
+  const value = serviceSelect?.value || "";
+
+  if (artFields) artFields.hidden = value !== "Derecho Laboral y ART";
+  if (descriptionField) {
+    descriptionField.placeholder = descriptionPlaceholders[value] || DEFAULT_DESCRIPTION_PLACEHOLDER;
+  }
+}
+
+serviceSelect?.addEventListener("change", syncServiceFields);
 
 function goToFormWithService(service) {
   if (serviceSelect && service) {
@@ -223,8 +254,6 @@ form?.addEventListener("submit", async (event) => {
       });
 
       if (!response.ok) throw new Error("No se pudo enviar la consulta.");
-    } else if (CONFIG.emailRecipient) {
-      window.location.href = buildMailtoUrl(data);
     }
 
     pushLeadEvent("lead_form_success", {
@@ -232,11 +261,14 @@ form?.addEventListener("submit", async (event) => {
       delivery: CONFIG.formEndpoint ? "endpoint" : "mailto",
     });
 
-    status.textContent = CONFIG.formEndpoint ? "Consulta recibida. BOQV se pondrá en contacto para coordinar una primera revisión." : "Se abrió un correo dirigido a BOQV con los datos de tu consulta.";
-    form.reset();
-    document.querySelectorAll("[data-param]").forEach((input) => {
-      input.value = storedParams[input.dataset.param] || "";
-    });
+    if (CONFIG.emailRecipient && !CONFIG.formEndpoint) {
+      window.location.href = buildMailtoUrl(data);
+      window.setTimeout(() => {
+        window.location.href = "gracias.html";
+      }, 600);
+    } else {
+      window.location.href = "gracias.html";
+    }
   } catch (error) {
     status.textContent = "No se pudo enviar. Probá nuevamente o contactá por WhatsApp.";
   } finally {
