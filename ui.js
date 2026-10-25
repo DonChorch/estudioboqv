@@ -1,37 +1,10 @@
-/* Capa de interfaz: entradas al hacer scroll y la carátula del expediente.
-   No toca el tracking ni el envío del formulario (eso vive en script.js). */
+/* Capa de movimiento. No toca el tracking ni el envío del formulario (eso vive en script.js).
+   Entradas ligadas al scroll: cada pieza avanza con el desplazamiento, entra desde un costado
+   o desde abajo y se deshace al volver. Sin librerías. Sin JavaScript todo queda visible. */
 (() => {
   const root = document.documentElement;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ── Carátula: el nombre y el área se reflejan mientras se completa el formulario ── */
-  const form = document.getElementById("leadForm");
-  const nameOut = document.querySelector("[data-caratula-name]");
-  const matterOut = document.querySelector("[data-caratula-matter]");
-  const matters = {
-    "Derecho Comercial": "s/ consulta comercial",
-    "Derecho Laboral y ART": "s/ reclamo laboral o accidente de trabajo",
-    "Derecho Administrativo": "s/ reclamo administrativo",
-    "Derecho de Daños": "s/ daños y perjuicios",
-    Sucesiones: "s/ sucesión",
-    "Asesoramiento Empresarial": "s/ asesoramiento empresarial",
-    "Otro tema legal": "s/ consulta legal",
-  };
-  const FALLBACK_NAME = "Tu nombre";
-  const FALLBACK_MATTER = "s/ consulta legal";
-
-  function syncCaratula() {
-    if (!form || !nameOut || !matterOut) return;
-    const name = form.elements.nombre?.value.trim().replace(/\s+/g, " ") || "";
-    const service = form.elements.servicio?.value || "";
-    nameOut.textContent = name ? name.toUpperCase() : FALLBACK_NAME;
-    nameOut.classList.toggle("is-empty", !name);
-    matterOut.textContent = matters[service] || FALLBACK_MATTER;
-  }
-
-  form?.addEventListener("input", syncCaratula);
-  form?.addEventListener("change", syncCaratula);
-  syncCaratula();
+  const small = () => window.matchMedia("(max-width: 720px)").matches;
 
   /* ── Barra móvil: se aparta al bajar leyendo y vuelve al subir ── */
   const bar = document.querySelector(".mobile-bar");
@@ -49,59 +22,119 @@
     );
   }
 
-  /* ── Entradas: título, texto y pieza de cada sección, escalonados ── */
-  const groups = [
-    [".hero__text > *", 0],
-    [".areas h2", 0],
-    [".area", 0],
-    [".studio__text > *", 0],
-    [".trio__item", 0],
-    [".flow__text > *", 0],
-    [".flow__steps li", 0],
-    [".contact__intro > *", 0],
-    [".lead-form", 0],
-    [".qa", 0],
+  if (reduced) return;
+
+  /* ── Qué se mueve y cómo: izquierda, derecha o desde abajo ── */
+  const plan = [
+    [".areas h2", "left"],
+    [".area:nth-child(odd)", "left"],
+    [".area:nth-child(even)", "right"],
+    [".studio__lead", "left"],
+    [".studio__more", "up"],
+    [".trio__item:nth-child(1)", "left"],
+    [".trio__item:nth-child(2)", "up"],
+    [".trio__item:nth-child(3)", "right"],
+    [".flow__text h2", "left"],
+    [".flow__text p", "right"],
+    [".flow__steps li:nth-child(1)", "left"],
+    [".flow__steps li:nth-child(2)", "up"],
+    [".flow__steps li:nth-child(3)", "right"],
+    [".contact__intro", "left"],
+    [".lead-form", "right"],
+    [".qa", "left"],
+    [".area p", "up"],
+    [".qa p", "up"],
+    [".contact__note", "up"],
+    [".contact__direct", "up"],
+    [".flow__steps p", "up"],
   ];
 
-  const targets = [];
-  groups.forEach(([selector]) => {
-    document.querySelectorAll(selector).forEach((el, i) => {
-      if (el.hasAttribute("data-reveal")) return;
-      el.setAttribute("data-reveal", "");
-      el.style.setProperty("--d", `${Math.min(i, 6) * 70}ms`);
-      targets.push(el);
+  const items = [];
+  plan.forEach(([selector, dir]) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      if (el.__fx) return;
+      el.__fx = true;
+      items.push({ el, dir, y: 0, p: -1, top: 0 });
     });
   });
+  if (!items.length) return;
 
-  if (reduced || !("IntersectionObserver" in window)) {
-    targets.forEach((el) => el.classList.add("is-in"));
-    return;
+  const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2); // power1.inOut
+  const clamp = (v) => Math.max(0, Math.min(1, v));
+  const parallax = document.querySelector(".hero__photo");
+  const heroBox = document.querySelector(".hero__media");
+
+  let vh = window.innerHeight;
+  let docH = document.documentElement.scrollHeight;
+
+  function measure() {
+    vh = window.innerHeight;
+    docH = document.documentElement.scrollHeight;
+    const maxScroll = Math.max(0, docH - vh);
+    items.forEach((it) => {
+      // posición real en la página, sin el desplazamiento que le damos nosotros
+      it.top = it.el.getBoundingClientRect().top + window.scrollY - it.y;
+      // si el final de la página no deja subirlo hasta el 62 %, que igual llegue a su sitio
+      it.minTop = it.top - maxScroll;
+    });
   }
 
-  root.classList.add("js");
+  function apply() {
+    const sy = window.scrollY;
+    const startLine = vh * 0.93;
+    const sm = small();
+    const dx = sm ? 36 : 100;
+    const dy = sm ? 36 : 50;
+    items.forEach((it) => {
+      if (it.done) return;
+      const top = it.top - sy;
+      const end = Math.max(vh * 0.62, it.minTop);
+      const range = Math.max(startLine - end, 80);
+      const p = ease(clamp((startLine - top) / range));
+      if (p >= 0.999) {
+        // ya llegó a su lugar: queda fijo y no vuelve a desvanecerse
+        it.done = true;
+        it.y = 0;
+        it.el.style.translate = "";
+        it.el.style.opacity = "";
+        return;
+      }
+      if (Math.abs(p - it.p) < 0.002) return;
+      it.p = p;
+      const k = 1 - p;
+      const x = it.dir === "left" ? -dx * k : it.dir === "right" ? dx * k : 0;
+      const y = it.dir === "up" ? dy * k : 0;
+      it.y = y;
+      it.el.style.translate = `${x.toFixed(1)}px ${y.toFixed(1)}px`;
+      it.el.style.opacity = p.toFixed(3);
+    });
+    if (parallax && heroBox) {
+      const r = heroBox.getBoundingClientRect();
+      if (r.bottom > 0) parallax.style.setProperty("--py", `${Math.min(48, Math.max(0, sy * 0.12)).toFixed(1)}px`);
+    }
+  }
 
-  const show = (el) => {
-    el.classList.add("is-in");
+  let queued = false;
+  const schedule = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      apply();
+    });
   };
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        show(entry.target);
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-  );
+  root.classList.add("js");
+  measure();
+  apply();
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", () => { measure(); apply(); });
+  window.addEventListener("load", () => { measure(); apply(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measure(); apply(); });
+  // si cambia el alto de la página (formulario, campos ART), se vuelve a medir
+  if ("ResizeObserver" in window) new ResizeObserver(() => { measure(); apply(); }).observe(document.body);
 
-  targets.forEach((el) => observer.observe(el));
-
-  /* Si algo impide observar (pestaña en segundo plano, impresión), nada queda oculto. */
-  window.setTimeout(() => {
-    targets.forEach((el) => {
-      if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < window.innerHeight) show(el);
-    });
-  }, 1200);
-  window.addEventListener("beforeprint", () => targets.forEach(show));
+  window.addEventListener("beforeprint", () => {
+    items.forEach((it) => { it.el.style.translate = "none"; it.el.style.opacity = "1"; });
+  });
 })();
