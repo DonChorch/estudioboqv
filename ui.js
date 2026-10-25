@@ -6,6 +6,14 @@
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const small = () => window.matchMedia("(max-width: 720px)").matches;
 
+  /* ── Encabezado fijo: al bajar pasa de claro a verde oscuro sólido ── */
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const sync = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+  }
+
   /* ── Barra móvil: se aparta al bajar leyendo y vuelve al subir ── */
   const bar = document.querySelector(".mobile-bar");
   if (bar) {

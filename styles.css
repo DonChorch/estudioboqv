@@ -16,6 +16,7 @@
   --gold-tint: #f7c27d;
 
   --m: clamp(16px, 2.4vw, 32px);
+  --header-h: 76px;
   --axis: 42%;
   --section: clamp(72px, 8vw, 120px);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -34,7 +35,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); }
 body {
   margin: 0;
   background: var(--bone);
@@ -82,18 +83,31 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 .btn-secondary:hover { background: var(--g4); transform: translateY(-2px); }
 .btn[disabled] { opacity: 0.6; cursor: progress; }
 
-/* ───────── Encabezado ───────── */
+/* ───────── Encabezado fijo: cambia de material al bajar ───────── */
 .site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   gap: 24px;
+  min-height: var(--header-h);
   padding: 16px var(--m);
   background: var(--bone);
+  color: var(--ink);
+  transition: background-color 0.5s var(--ease), color 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
-.brand { display: grid; align-content: center; gap: 2px; line-height: 1; min-height: 44px; margin-right: auto; color: var(--ink); }
+main { padding-top: var(--header-h); }
+.site-header.is-scrolled { background: var(--g1); color: var(--bone); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); /* taste-skill-ignore: sombra de barra fija */ --focus: var(--gold); }
+.site-header.is-scrolled .brand { color: var(--bone); }
+.site-header.is-scrolled .brand__sub { color: var(--on-dark-soft); }
+.site-header.is-scrolled .nav a:hover { color: var(--gold); }
+.brand { display: grid; align-content: center; gap: 2px; line-height: 1; min-height: 44px; margin-right: auto; color: var(--ink); transition: color 0.5s var(--ease); }
 #contenido:focus { outline: none; }
 .brand__name { font-family: var(--sans); font-size: var(--step-lead); font-weight: 700; letter-spacing: 0.04em; }
-.brand__sub { font-family: var(--sans); font-size: var(--step-small); font-weight: 400; color: var(--soft); }
+.brand__sub { font-family: var(--sans); font-size: var(--step-small); font-weight: 400; color: var(--soft); transition: color 0.5s var(--ease); }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   display: inline-flex;
@@ -109,7 +123,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 .header-cta { min-height: 44px; }
 
 /* ───────── Portada ───────── */
-.hero { background: var(--bone); display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.hero { background: var(--bone); display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: calc(100svh - var(--header-h)); }
 .hero__text { display: grid; gap: 28px; align-content: center; padding: clamp(40px, 6vw, 96px) var(--m) clamp(40px, 6vw, 96px); }
 .hero__lead { font-size: var(--step-lead); line-height: 1.3; max-width: 32ch; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -138,7 +152,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 .areas h2 { margin-bottom: clamp(40px, 5vw, 72px); }
 .areas__list { display: grid; grid-template-columns: 1fr 1fr; gap: 48px clamp(32px, 6vw, 96px); }
 .area { display: grid; grid-template-columns: 1fr auto; column-gap: 24px; row-gap: 8px; align-items: baseline; scroll-margin-top: 24px; }
-.area p { grid-column: 1 / -1; max-width: 44ch; }
+.area p { grid-column: 1 / -1; max-width: 56ch; }
 .service-card__cta {
   display: inline-flex;
   align-items: center;
@@ -209,7 +223,6 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
   padding: 40px;
   background: var(--bone);
   color: var(--ink);
-  max-width: 760px;
 }
 .lead-form .full { grid-column: 1 / -1; }
 .lead-form label { display: grid; gap: 6px; font-family: var(--sans); font-size: var(--step-small); font-weight: 600; }
@@ -287,7 +300,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 /* ───────── Tablet y teléfono ───────── */
 @media (max-width: 1040px) {
   :root { --axis: 0%; }
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
   .hero__media { order: -1; min-height: 0; aspect-ratio: 1400 / 1083; max-height: 60svh; }
   .areas__list { gap: 40px 40px; }
   .contact, .qa, .flow__text { grid-template-columns: 1fr; }
@@ -300,6 +313,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 
 
 @media (max-width: 720px) {
+  :root { --header-h: 68px; }
   .site-header { padding: 12px var(--m); }
   .nav { display: none; }
   .title { font-size: 11.4vw; }
@@ -341,5 +355,5 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
   .title__line > span, .hero__photo, .hero__text > :not(.title) { animation: none; }
   .hero__photo { translate: none; }
   .mobile-bar { transition: none; }
-  .btn, .trio__item img, .service-card__cta span, .whatsapp-float { transition: none; }
+  .btn, .trio__item img, .service-card__cta span, .whatsapp-float, .site-header, .brand, .brand__sub { transition: none; }
 }
