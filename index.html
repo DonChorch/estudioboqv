@@ -48,8 +48,8 @@
     <link rel="preload" href="assets/hero.jpg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261025-1" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261025-2" />
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -252,62 +252,54 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="site-header" aria-label="Encabezado principal">
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#servicios">Áreas</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#proceso">Cómo trabajamos</a>
-      </nav>
       <a class="brand" href="#inicio" aria-label="BOQV Abogados, inicio">
         <span class="brand__name">BOQV</span>
         <span class="brand__sub">Abogados</span>
       </a>
-      <a class="header-cta" href="#consulta">Consultar</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#servicios">Áreas</a>
+        <a href="#equipo">Estudio</a>
+        <a href="#proceso">Cómo trabajamos</a>
+      </nav>
+      <a class="header-cta btn btn-primary" href="#consulta">Consultar</a>
     </header>
     <main id="inicio">
       <section class="hero" aria-label="Presentación">
-        <div class="hero__head">
-          <h1>Abogados en La Plata</h1>
-          <p class="hero__lead">
-            Estudio jurídico con atención en La Plata, CABA y Provincia de
-            Buenos Aires: conflictos laborales y ART, sucesiones, daños y
-            asesoramiento a empresas.
-          </p>
+        <div class="mosaic" aria-hidden="false">
+          <img class="m m--a" src="assets/hero.jpg" alt="Los tres abogados de BOQV en su estudio" width="784" height="607" />
+          <img class="m m--b" src="assets/juan-cruz-berridi.jpg" alt="Juan Cruz Berridi" width="800" height="1200" />
+          <span class="m m--c" aria-hidden="true"></span>
+          <span class="m m--d" aria-hidden="true"></span>
+          <img class="m m--e" src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada" width="800" height="1200" />
+          <span class="m m--g" aria-hidden="true"></span>
+          <img class="m m--f" src="assets/maximiliano-vaccari.jpg" alt="Maximiliano Vaccari" width="800" height="1200" />
         </div>
-        <div class="stack" aria-label="Áreas de consulta">
-          <a class="folder folder--1" href="#laboral"><span class="folder__tab">Laboral y ART</span></a>
-          <a class="folder folder--2" href="#sucesiones"><span class="folder__tab">Sucesiones</span></a>
-          <a class="folder folder--3" href="#empresarial"><span class="folder__tab">Empresas</span></a>
-          <a class="folder folder--4" href="#servicios"><span class="folder__tab">Otras áreas</span></a>
-          <div class="folder folder--front">
-            <span class="folder__tab">Tu consulta</span>
-            <div class="front">
-              <div class="front__action">
-                <p class="front__lead">Contanos qué pasó. Evaluamos el caso y te respondemos.</p>
-                <div class="hero__actions" aria-label="Acciones principales">
-                  <a class="btn btn-primary" data-whatsapp-link href="#consulta">Consultar por WhatsApp</a>
-                  <a class="btn btn-secondary" href="#consulta">Dejar mi consulta</a>
-                </div>
-                <ul class="hero__facts" aria-label="Datos destacados">
-                  <li>Más de diez años de trayectoria</li>
-                  <li>Atención directa del estudio</li>
-                  <li>Evaluación inicial del caso</li>
-                </ul>
-              </div>
-              <img
-                class="front__photo"
-                src="assets/hero.jpg"
-                alt="Los tres abogados de BOQV en su estudio"
-                width="784"
-                height="607"
-              />
+        <div class="hero__body">
+          <div class="hero__side">
+            <p class="hero__lead">
+              Estudio jurídico con atención en La Plata, CABA y Provincia de
+              Buenos Aires: conflictos laborales y ART, sucesiones, daños y
+              asesoramiento a empresas.
+            </p>
+            <div class="hero__actions" aria-label="Acciones principales">
+              <a class="btn btn-primary" data-whatsapp-link href="#consulta">Consultar por WhatsApp</a>
+              <a class="btn btn-secondary" href="#consulta">Dejar mi consulta</a>
             </div>
+          </div>
+          <div class="hero__main">
+            <h1 class="title"><span class="title__line"><span>Abogados en</span></span><span class="title__line"><span>La Plata</span></span></h1>
+            <ul class="hero__facts" aria-label="Datos destacados">
+              <li>Más de diez años de trayectoria</li>
+              <li>Atención directa del estudio</li>
+              <li>Evaluación inicial del caso</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section id="servicios" class="areas" aria-labelledby="areas-title">
-        <h2 id="areas-title">Estos son los casos que atendemos</h2>
-        <div class="areas__grid">
+        <div class="areas__side">
+          <h2 id="areas-title">Casos que atendemos</h2>
           <div class="conversion-strip areas__aside">
             <h3>¿Querés que revisemos tu situación?</h3>
             <p>
@@ -319,271 +311,257 @@
               <a class="btn btn-secondary" href="#consulta">Completar formulario</a>
             </div>
           </div>
-          <ul class="areas__list" aria-label="Áreas de consulta">
-            <li id="laboral" class="area">
-              <h3>Derecho Laboral y ART</h3>
-              <p>
-                Asesoramos tanto a trabajadores como a empleadores: accidentes
-                de trabajo, reclamos ante ART y situaciones laborales.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Laboral y ART" aria-label="Consultar por Derecho Laboral y ART">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-            <li id="sucesiones" class="area">
-              <h3>Sucesiones</h3>
-              <p>
-                Acompañamiento para iniciar, continuar o destrabar una sucesión
-                con una mirada práctica sobre los pasos a seguir.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Sucesiones" aria-label="Consultar por Sucesiones">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-            <li id="empresarial" class="area">
-              <h3>Asesoramiento Empresarial</h3>
-              <p>
-                Seguimiento legal para empresas: contratos, prevención de
-                conflictos, decisiones comerciales y temas societarios.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Asesoramiento Empresarial" aria-label="Consultar por Asesoramiento Empresarial">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-            <li id="danos" class="area area--group">
-              <h3>Derecho de Daños</h3>
-              <p>
-                Análisis de reclamos por daños, responsabilidades y
-                documentación necesaria para evaluar los pasos posibles.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho de Daños" aria-label="Consultar por Derecho de Daños">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-            <li id="comercial" class="area">
-              <h3>Derecho Comercial</h3>
-              <p>
-                Asesoramiento en contratos, operaciones comerciales, sociedades,
-                reclamos y decisiones legales vinculadas a la actividad
-                empresaria.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Comercial" aria-label="Consultar por Derecho Comercial">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-            <li id="administrativo" class="area">
-              <h3>Derecho Administrativo</h3>
-              <p>
-                Trámites y reclamos ante organismos públicos, gestiones
-                administrativas y respuestas a intimaciones o sanciones.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Administrativo" aria-label="Consultar por Derecho Administrativo">Consultar <span aria-hidden="true">→</span></a>
-            </li>
-          </ul>
         </div>
-      </section>
-
-      <section id="equipo" class="team" aria-labelledby="team-title">
-        <h2 id="team-title">El equipo de BOQV</h2>
-        <p class="team__lead">
-          Berridi, Ortiz Quesada &amp; Vaccari brinda servicios legales
-          integrales con más de diez años de trayectoria y una forma de trabajo
-          enfocada en escuchar, ordenar y responder con claridad.
-        </p>
-        <ul class="tiles" aria-label="Integrantes del estudio">
-          <li class="tile tile--1">
-            <img src="assets/juan-cruz-berridi.jpg" alt="Juan Cruz Berridi, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div class="tile__cap">
-              <h3>Juan Cruz Berridi</h3>
-              <p>Derecho laboral y administrativo</p>
-            </div>
+        <ul class="areas__list" aria-label="Áreas de consulta">
+          <li id="laboral" class="area">
+            <h3>Derecho Laboral y ART</h3>
+            <p>
+              Asesoramos tanto a trabajadores como a empleadores: accidentes
+              de trabajo, reclamos ante ART y situaciones laborales.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Derecho Laboral y ART" aria-label="Consultar por Derecho Laboral y ART">Consultar <span aria-hidden="true">→</span></a>
           </li>
-          <li class="tile tile--2">
-            <img src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div class="tile__cap">
-              <h3>Alvaro Ortiz Quesada</h3>
-              <p>Derecho comercial</p>
-            </div>
+          <li id="sucesiones" class="area">
+            <h3>Sucesiones</h3>
+            <p>
+              Acompañamiento para iniciar, continuar o destrabar una sucesión
+              con una mirada práctica sobre los pasos a seguir.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Sucesiones" aria-label="Consultar por Sucesiones">Consultar <span aria-hidden="true">→</span></a>
           </li>
-          <li class="tile tile--3">
-            <img src="assets/maximiliano-vaccari.jpg" alt="Maximiliano Vaccari, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div class="tile__cap">
-              <h3>Maximiliano Vaccari</h3>
-              <p>Derecho de daños y sucesiones</p>
-            </div>
+          <li id="empresarial" class="area">
+            <h3>Asesoramiento Empresarial</h3>
+            <p>
+              Seguimiento legal para empresas: contratos, prevención de
+              conflictos, decisiones comerciales y temas societarios.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Asesoramiento Empresarial" aria-label="Consultar por Asesoramiento Empresarial">Consultar <span aria-hidden="true">→</span></a>
+          </li>
+          <li id="danos" class="area">
+            <h3>Derecho de Daños</h3>
+            <p>
+              Análisis de reclamos por daños, responsabilidades y
+              documentación necesaria para evaluar los pasos posibles.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Derecho de Daños" aria-label="Consultar por Derecho de Daños">Consultar <span aria-hidden="true">→</span></a>
+          </li>
+          <li id="comercial" class="area">
+            <h3>Derecho Comercial</h3>
+            <p>
+              Asesoramiento en contratos, operaciones comerciales, sociedades,
+              reclamos y decisiones legales vinculadas a la actividad
+              empresaria.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Derecho Comercial" aria-label="Consultar por Derecho Comercial">Consultar <span aria-hidden="true">→</span></a>
+          </li>
+          <li id="administrativo" class="area">
+            <h3>Derecho Administrativo</h3>
+            <p>
+              Trámites y reclamos ante organismos públicos, gestiones
+              administrativas y respuestas a intimaciones o sanciones.
+            </p>
+            <a class="service-card__cta" href="#consulta" data-service="Derecho Administrativo" aria-label="Consultar por Derecho Administrativo">Consultar <span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </section>
 
-      <section id="proceso" class="process" aria-labelledby="process-title">
-        <div class="process__text">
-          <h2 id="process-title">Cómo trabajamos</h2>
+      <section id="equipo" class="studio" aria-labelledby="studio-title">
+        <h2 id="studio-title" class="visually-hidden">El estudio</h2>
+        <dl class="studio__facts">
+          <div><dt>Dónde</dt><dd>Calle 12 N°623, La Plata</dd></div>
+          <div><dt>Desde hace</dt><dd>más de diez años</dd></div>
+          <div><dt>Cómo llegar a nosotros</dt><dd><a href="tel:+5492215942574">+54 9 2215 94-2574</a></dd></div>
+        </dl>
+        <div class="studio__text">
+          <p class="studio__lead">
+            <strong>BOQV Abogados</strong> es el estudio de Berridi, Ortiz
+            Quesada &amp; Vaccari: servicios legales integrales para personas,
+            familias y empresas, con atención directa.
+          </p>
+          <p class="studio__more">
+            Una forma de trabajo enfocada en escuchar, ordenar y responder con
+            claridad, con evaluación inicial de cada caso.
+          </p>
+        </div>
+        <ul class="trio" aria-label="Integrantes del estudio">
+          <li class="trio__item">
+            <img src="assets/juan-cruz-berridi.jpg" alt="Juan Cruz Berridi, abogado de BOQV" width="800" height="1200" loading="lazy" />
+            <div class="trio__cap"><h3>Juan Cruz Berridi</h3><p>Derecho laboral y administrativo</p></div>
+          </li>
+          <li class="trio__item">
+            <img src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada, abogado de BOQV" width="800" height="1200" loading="lazy" />
+            <div class="trio__cap"><h3>Alvaro Ortiz Quesada</h3><p>Derecho comercial</p></div>
+          </li>
+          <li class="trio__item">
+            <img src="assets/maximiliano-vaccari.jpg" alt="Maximiliano Vaccari, abogado de BOQV" width="800" height="1200" loading="lazy" />
+            <div class="trio__cap"><h3>Maximiliano Vaccari</h3><p>Derecho de daños y sucesiones</p></div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="proceso" class="flow" aria-labelledby="flow-title">
+        <div class="flow__text">
+          <h2 id="flow-title">Del caso al camino</h2>
           <p>
             Primero entendemos tu caso, después evaluamos el camino. Así queda
             ordenado desde el primer mensaje.
           </p>
         </div>
-        <ol class="slip" aria-label="Pasos de la consulta">
-          <li class="slip__stage">
-            <h3>Primero</h3>
-            <p class="slip__row"><span>Nos contás qué pasó</span><span class="slip__who">Vos</span></p>
-            <p class="slip__note">Completás el formulario o enviás un mensaje con los datos principales.</p>
+        <svg class="flow__svg flow__svg--h" viewBox="0 0 1200 270" role="img" aria-label="Del caso desordenado a un camino claro" focusable="false"><rect x="126" y="39" width="12" height="12" fill="#8fb1aa"/><rect x="253" y="19" width="12" height="12" fill="#5d8a82"/><rect x="208" y="94" width="12" height="12" fill="#8fb1aa"/><rect x="23" y="131" width="12" height="12" fill="#5d8a82"/><rect x="15" y="112" width="12" height="12" fill="#8fb1aa"/><rect x="27" y="23" width="12" height="12" fill="#5d8a82"/><rect x="165" y="213" width="12" height="12" fill="#8fb1aa"/><rect x="48" y="58" width="12" height="12" fill="#5d8a82"/><rect x="243" y="245" width="12" height="12" fill="#8fb1aa"/><rect x="224" y="102" width="12" height="12" fill="#5d8a82"/><rect x="379" y="12" width="12" height="12" fill="#8fb1aa"/><rect x="333" y="75" width="12" height="12" fill="#5d8a82"/><rect x="56" y="30" width="12" height="12" fill="#8fb1aa"/><rect x="120" y="211" width="12" height="12" fill="#5d8a82"/><rect x="70" y="150" width="12" height="12" fill="#8fb1aa"/><rect x="248" y="96" width="12" height="12" fill="#5d8a82"/><rect x="213" y="16" width="12" height="12" fill="#8fb1aa"/><rect x="23" y="53" width="12" height="12" fill="#5d8a82"/><rect x="264" y="110" width="12" height="12" fill="#8fb1aa"/><rect x="122" y="151" width="12" height="12" fill="#5d8a82"/><rect x="176" y="77" width="12" height="12" fill="#8fb1aa"/><rect x="308" y="180" width="12" height="12" fill="#5d8a82"/><rect x="95" y="148" width="12" height="12" fill="#8fb1aa"/><rect x="204" y="226" width="12" height="12" fill="#5d8a82"/><rect x="283" y="74" width="12" height="12" fill="#8fb1aa"/><rect x="380" y="30" width="12" height="12" fill="#5d8a82"/><rect x="162" y="195" width="12" height="12" fill="#8fb1aa"/><rect x="59" y="126" width="12" height="12" fill="#5d8a82"/><rect x="15" y="172" width="12" height="12" fill="#8fb1aa"/><rect x="297" y="148" width="12" height="12" fill="#5d8a82"/><rect x="340" y="81" width="12" height="12" fill="#8fb1aa"/><rect x="270" y="153" width="12" height="12" fill="#5d8a82"/><rect x="225" y="118" width="12" height="12" fill="#8fb1aa"/><rect x="326" y="244" width="12" height="12" fill="#5d8a82"/><rect x="184" y="171" width="12" height="12" fill="#8fb1aa"/><rect x="24" y="181" width="12" height="12" fill="#5d8a82"/><rect x="251" y="256" width="12" height="12" fill="#8fb1aa"/><rect x="319" y="73" width="12" height="12" fill="#5d8a82"/><rect x="150" y="173" width="12" height="12" fill="#8fb1aa"/><rect x="9" y="119" width="12" height="12" fill="#5d8a82"/><rect x="400" y="113" width="12" height="12" fill="#bccbc5"/><rect x="400" y="129" width="12" height="12" fill="#bccbc5"/><rect x="400" y="145" width="12" height="12" fill="#bccbc5"/><rect x="416" y="113" width="12" height="12" fill="#bccbc5"/><rect x="416" y="129" width="12" height="12" fill="#bccbc5"/><rect x="416" y="145" width="12" height="12" fill="#bccbc5"/><rect x="432" y="113" width="12" height="12" fill="#bccbc5"/><rect x="432" y="129" width="12" height="12" fill="#bccbc5"/><rect x="432" y="145" width="12" height="12" fill="#bccbc5"/><rect x="448" y="113" width="12" height="12" fill="#bccbc5"/><rect x="448" y="129" width="12" height="12" fill="#bccbc5"/><rect x="448" y="145" width="12" height="12" fill="#bccbc5"/><rect x="464" y="113" width="12" height="12" fill="#bccbc5"/><rect x="464" y="129" width="12" height="12" fill="#bccbc5"/><rect x="464" y="145" width="12" height="12" fill="#bccbc5"/><rect x="480" y="113" width="12" height="12" fill="#bccbc5"/><rect x="480" y="129" width="12" height="12" fill="#bccbc5"/><rect x="480" y="145" width="12" height="12" fill="#bccbc5"/><rect x="496" y="113" width="12" height="12" fill="#bccbc5"/><rect x="496" y="129" width="12" height="12" fill="#bccbc5"/><rect x="496" y="145" width="12" height="12" fill="#bccbc5"/><rect x="512" y="113" width="12" height="12" fill="#bccbc5"/><rect x="512" y="129" width="12" height="12" fill="#bccbc5"/><rect x="512" y="145" width="12" height="12" fill="#bccbc5"/><rect x="528" y="113" width="12" height="12" fill="#bccbc5"/><rect x="528" y="129" width="12" height="12" fill="#bccbc5"/><rect x="528" y="145" width="12" height="12" fill="#bccbc5"/><rect x="544" y="113" width="12" height="12" fill="#bccbc5"/><rect x="544" y="129" width="12" height="12" fill="#bccbc5"/><rect x="544" y="145" width="12" height="12" fill="#bccbc5"/><rect x="560" y="113" width="12" height="12" fill="#bccbc5"/><rect x="560" y="129" width="12" height="12" fill="#bccbc5"/><rect x="560" y="145" width="12" height="12" fill="#bccbc5"/><rect x="576" y="113" width="12" height="12" fill="#bccbc5"/><rect x="576" y="129" width="12" height="12" fill="#bccbc5"/><rect x="576" y="145" width="12" height="12" fill="#bccbc5"/><rect x="592" y="113" width="12" height="12" fill="#bccbc5"/><rect x="592" y="129" width="12" height="12" fill="#bccbc5"/><rect x="592" y="145" width="12" height="12" fill="#bccbc5"/><rect x="608" y="113" width="12" height="12" fill="#bccbc5"/><rect x="608" y="129" width="12" height="12" fill="#bccbc5"/><rect x="608" y="145" width="12" height="12" fill="#bccbc5"/><rect x="624" y="113" width="12" height="12" fill="#bccbc5"/><rect x="624" y="129" width="12" height="12" fill="#bccbc5"/><rect x="624" y="145" width="12" height="12" fill="#bccbc5"/><rect x="640" y="113" width="12" height="12" fill="#bccbc5"/><rect x="640" y="129" width="12" height="12" fill="#bccbc5"/><rect x="640" y="145" width="12" height="12" fill="#bccbc5"/><rect x="656" y="113" width="12" height="12" fill="#bccbc5"/><rect x="656" y="129" width="12" height="12" fill="#bccbc5"/><rect x="656" y="145" width="12" height="12" fill="#bccbc5"/><rect x="672" y="113" width="12" height="12" fill="#bccbc5"/><rect x="672" y="129" width="12" height="12" fill="#bccbc5"/><rect x="672" y="145" width="12" height="12" fill="#bccbc5"/><rect x="688" y="113" width="12" height="12" fill="#bccbc5"/><rect x="688" y="129" width="12" height="12" fill="#bccbc5"/><rect x="688" y="145" width="12" height="12" fill="#bccbc5"/><rect x="704" y="113" width="12" height="12" fill="#bccbc5"/><rect x="704" y="129" width="12" height="12" fill="#bccbc5"/><rect x="704" y="145" width="12" height="12" fill="#bccbc5"/><rect x="720" y="113" width="12" height="12" fill="#bccbc5"/><rect x="720" y="129" width="12" height="12" fill="#bccbc5"/><rect x="720" y="145" width="12" height="12" fill="#bccbc5"/><rect x="736" y="113" width="12" height="12" fill="#bccbc5"/><rect x="736" y="129" width="12" height="12" fill="#bccbc5"/><rect x="736" y="145" width="12" height="12" fill="#bccbc5"/><rect x="752" y="113" width="12" height="12" fill="#bccbc5"/><rect x="752" y="129" width="12" height="12" fill="#bccbc5"/><rect x="752" y="145" width="12" height="12" fill="#bccbc5"/><rect x="768" y="113" width="12" height="12" fill="#bccbc5"/><rect x="768" y="129" width="12" height="12" fill="#bccbc5"/><rect x="768" y="145" width="12" height="12" fill="#bccbc5"/><rect x="800" y="0" width="12" height="12" fill="#f2a23a"/><rect x="843" y="0" width="12" height="12" fill="#f2a23a"/><rect x="886" y="0" width="12" height="12" fill="#f2a23a"/><rect x="929" y="0" width="12" height="12" fill="#f2a23a"/><rect x="972" y="0" width="12" height="12" fill="#f2a23a"/><rect x="1016" y="0" width="12" height="12" fill="#f2a23a"/><rect x="1059" y="0" width="12" height="12" fill="#f2a23a"/><rect x="1102" y="0" width="12" height="12" fill="#f2a23a"/><rect x="1145" y="0" width="12" height="12" fill="#f2a23a"/><rect x="1188" y="0" width="12" height="12" fill="#f2a23a"/><rect x="800" y="86" width="12" height="12" fill="#f2a23a"/><rect x="843" y="86" width="12" height="12" fill="#f2a23a"/><rect x="886" y="86" width="12" height="12" fill="#f2a23a"/><rect x="929" y="86" width="12" height="12" fill="#f2a23a"/><rect x="972" y="86" width="12" height="12" fill="#f2a23a"/><rect x="1016" y="86" width="12" height="12" fill="#f2a23a"/><rect x="1059" y="86" width="12" height="12" fill="#f2a23a"/><rect x="1102" y="86" width="12" height="12" fill="#f2a23a"/><rect x="1145" y="86" width="12" height="12" fill="#f2a23a"/><rect x="1188" y="86" width="12" height="12" fill="#f2a23a"/><rect x="800" y="172" width="12" height="12" fill="#f2a23a"/><rect x="843" y="172" width="12" height="12" fill="#f2a23a"/><rect x="886" y="172" width="12" height="12" fill="#f2a23a"/><rect x="929" y="172" width="12" height="12" fill="#f2a23a"/><rect x="972" y="172" width="12" height="12" fill="#f2a23a"/><rect x="1016" y="172" width="12" height="12" fill="#f2a23a"/><rect x="1059" y="172" width="12" height="12" fill="#f2a23a"/><rect x="1102" y="172" width="12" height="12" fill="#f2a23a"/><rect x="1145" y="172" width="12" height="12" fill="#f2a23a"/><rect x="1188" y="172" width="12" height="12" fill="#f2a23a"/><rect x="800" y="258" width="12" height="12" fill="#f2a23a"/><rect x="843" y="258" width="12" height="12" fill="#f2a23a"/><rect x="886" y="258" width="12" height="12" fill="#f2a23a"/><rect x="929" y="258" width="12" height="12" fill="#f2a23a"/><rect x="972" y="258" width="12" height="12" fill="#f2a23a"/><rect x="1016" y="258" width="12" height="12" fill="#f2a23a"/><rect x="1059" y="258" width="12" height="12" fill="#f2a23a"/><rect x="1102" y="258" width="12" height="12" fill="#f2a23a"/><rect x="1145" y="258" width="12" height="12" fill="#f2a23a"/><rect x="1188" y="258" width="12" height="12" fill="#f2a23a"/></svg>
+        <svg class="flow__svg flow__svg--v" viewBox="0 0 300 420" role="img" aria-label="Del caso desordenado a un camino claro" focusable="false"><rect x="34" y="22" width="12" height="12" fill="#8fb1aa"/><rect x="221" y="8" width="12" height="12" fill="#5d8a82"/><rect x="71" y="17" width="12" height="12" fill="#8fb1aa"/><rect x="251" y="50" width="12" height="12" fill="#5d8a82"/><rect x="129" y="10" width="12" height="12" fill="#8fb1aa"/><rect x="254" y="70" width="12" height="12" fill="#5d8a82"/><rect x="249" y="105" width="12" height="12" fill="#8fb1aa"/><rect x="120" y="36" width="12" height="12" fill="#5d8a82"/><rect x="255" y="46" width="12" height="12" fill="#8fb1aa"/><rect x="43" y="123" width="12" height="12" fill="#5d8a82"/><rect x="67" y="23" width="12" height="12" fill="#8fb1aa"/><rect x="140" y="30" width="12" height="12" fill="#5d8a82"/><rect x="76" y="75" width="12" height="12" fill="#8fb1aa"/><rect x="121" y="1" width="12" height="12" fill="#5d8a82"/><rect x="163" y="47" width="12" height="12" fill="#8fb1aa"/><rect x="199" y="122" width="12" height="12" fill="#5d8a82"/><rect x="178" y="66" width="12" height="12" fill="#8fb1aa"/><rect x="16" y="87" width="12" height="12" fill="#5d8a82"/><rect x="225" y="115" width="12" height="12" fill="#8fb1aa"/><rect x="230" y="112" width="12" height="12" fill="#5d8a82"/><rect x="115" y="50" width="12" height="12" fill="#8fb1aa"/><rect x="183" y="13" width="12" height="12" fill="#5d8a82"/><rect x="19" y="8" width="12" height="12" fill="#8fb1aa"/><rect x="47" y="27" width="12" height="12" fill="#5d8a82"/><rect x="15" y="44" width="12" height="12" fill="#8fb1aa"/><rect x="44" y="0" width="12" height="12" fill="#5d8a82"/><rect x="105" y="13" width="12" height="12" fill="#8fb1aa"/><rect x="252" y="3" width="12" height="12" fill="#5d8a82"/><rect x="43" y="79" width="12" height="12" fill="#8fb1aa"/><rect x="100" y="32" width="12" height="12" fill="#5d8a82"/><rect x="35" y="47" width="12" height="12" fill="#8fb1aa"/><rect x="286" y="109" width="12" height="12" fill="#5d8a82"/><rect x="139" y="60" width="12" height="12" fill="#8fb1aa"/><rect x="29" y="11" width="12" height="12" fill="#5d8a82"/><rect x="76" y="44" width="12" height="12" fill="#8fb1aa"/><rect x="46" y="106" width="12" height="12" fill="#5d8a82"/><rect x="274" y="3" width="12" height="12" fill="#8fb1aa"/><rect x="42" y="68" width="12" height="12" fill="#5d8a82"/><rect x="8" y="70" width="12" height="12" fill="#8fb1aa"/><rect x="282" y="68" width="12" height="12" fill="#5d8a82"/><rect x="128" y="140" width="12" height="12" fill="#bccbc5"/><rect x="144" y="140" width="12" height="12" fill="#bccbc5"/><rect x="160" y="140" width="12" height="12" fill="#bccbc5"/><rect x="128" y="156" width="12" height="12" fill="#bccbc5"/><rect x="144" y="156" width="12" height="12" fill="#bccbc5"/><rect x="160" y="156" width="12" height="12" fill="#bccbc5"/><rect x="128" y="172" width="12" height="12" fill="#bccbc5"/><rect x="144" y="172" width="12" height="12" fill="#bccbc5"/><rect x="160" y="172" width="12" height="12" fill="#bccbc5"/><rect x="128" y="188" width="12" height="12" fill="#bccbc5"/><rect x="144" y="188" width="12" height="12" fill="#bccbc5"/><rect x="160" y="188" width="12" height="12" fill="#bccbc5"/><rect x="128" y="204" width="12" height="12" fill="#bccbc5"/><rect x="144" y="204" width="12" height="12" fill="#bccbc5"/><rect x="160" y="204" width="12" height="12" fill="#bccbc5"/><rect x="128" y="220" width="12" height="12" fill="#bccbc5"/><rect x="144" y="220" width="12" height="12" fill="#bccbc5"/><rect x="160" y="220" width="12" height="12" fill="#bccbc5"/><rect x="128" y="236" width="12" height="12" fill="#bccbc5"/><rect x="144" y="236" width="12" height="12" fill="#bccbc5"/><rect x="160" y="236" width="12" height="12" fill="#bccbc5"/><rect x="128" y="252" width="12" height="12" fill="#bccbc5"/><rect x="144" y="252" width="12" height="12" fill="#bccbc5"/><rect x="160" y="252" width="12" height="12" fill="#bccbc5"/><rect x="0" y="280" width="12" height="12" fill="#f2a23a"/><rect x="0" y="294" width="12" height="12" fill="#f2a23a"/><rect x="0" y="308" width="12" height="12" fill="#f2a23a"/><rect x="0" y="323" width="12" height="12" fill="#f2a23a"/><rect x="0" y="337" width="12" height="12" fill="#f2a23a"/><rect x="0" y="351" width="12" height="12" fill="#f2a23a"/><rect x="0" y="365" width="12" height="12" fill="#f2a23a"/><rect x="0" y="380" width="12" height="12" fill="#f2a23a"/><rect x="0" y="394" width="12" height="12" fill="#f2a23a"/><rect x="0" y="408" width="12" height="12" fill="#f2a23a"/><rect x="96" y="280" width="12" height="12" fill="#f2a23a"/><rect x="96" y="294" width="12" height="12" fill="#f2a23a"/><rect x="96" y="308" width="12" height="12" fill="#f2a23a"/><rect x="96" y="323" width="12" height="12" fill="#f2a23a"/><rect x="96" y="337" width="12" height="12" fill="#f2a23a"/><rect x="96" y="351" width="12" height="12" fill="#f2a23a"/><rect x="96" y="365" width="12" height="12" fill="#f2a23a"/><rect x="96" y="380" width="12" height="12" fill="#f2a23a"/><rect x="96" y="394" width="12" height="12" fill="#f2a23a"/><rect x="96" y="408" width="12" height="12" fill="#f2a23a"/><rect x="192" y="280" width="12" height="12" fill="#f2a23a"/><rect x="192" y="294" width="12" height="12" fill="#f2a23a"/><rect x="192" y="308" width="12" height="12" fill="#f2a23a"/><rect x="192" y="323" width="12" height="12" fill="#f2a23a"/><rect x="192" y="337" width="12" height="12" fill="#f2a23a"/><rect x="192" y="351" width="12" height="12" fill="#f2a23a"/><rect x="192" y="365" width="12" height="12" fill="#f2a23a"/><rect x="192" y="380" width="12" height="12" fill="#f2a23a"/><rect x="192" y="394" width="12" height="12" fill="#f2a23a"/><rect x="192" y="408" width="12" height="12" fill="#f2a23a"/><rect x="288" y="280" width="12" height="12" fill="#f2a23a"/><rect x="288" y="294" width="12" height="12" fill="#f2a23a"/><rect x="288" y="308" width="12" height="12" fill="#f2a23a"/><rect x="288" y="323" width="12" height="12" fill="#f2a23a"/><rect x="288" y="337" width="12" height="12" fill="#f2a23a"/><rect x="288" y="351" width="12" height="12" fill="#f2a23a"/><rect x="288" y="365" width="12" height="12" fill="#f2a23a"/><rect x="288" y="380" width="12" height="12" fill="#f2a23a"/><rect x="288" y="394" width="12" height="12" fill="#f2a23a"/><rect x="288" y="408" width="12" height="12" fill="#f2a23a"/></svg>
+        <ol class="flow__steps">
+          <li>
+            <h3>Contás</h3>
+            <p>Completás el formulario o enviás un mensaje con los datos principales.</p>
           </li>
-          <li class="slip__stage">
-            <h3>Después</h3>
-            <p class="slip__row"><span>Revisamos el caso</span><span class="slip__who">BOQV</span></p>
-            <p class="slip__note">Identificamos la información relevante y qué documentación puede hacer falta.</p>
+          <li>
+            <h3>Revisamos</h3>
+            <p>Identificamos la información relevante y qué documentación puede hacer falta.</p>
           </li>
-          <li class="slip__stage">
-            <h3>Por último</h3>
-            <p class="slip__row"><span>Te respondemos</span><span class="slip__who">BOQV</span></p>
-            <p class="slip__note">Coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
+          <li>
+            <h3>Respondemos</h3>
+            <p>Coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
           </li>
-          <li class="slip__total">Al final tenés un primer contacto y un camino claro</li>
         </ol>
       </section>
 
       <section id="consulta" class="contact" aria-labelledby="contact-title">
-        <div class="coupon">
-          <div class="coupon__intro">
-            <h2 id="contact-title">Abrí tu consulta</h2>
-            <div class="caratula" aria-live="polite">
-              <p class="caratula__label">Autos caratulados</p>
-              <p class="caratula__name" data-caratula-name>Tu nombre</p>
-              <p class="caratula__matter" data-caratula-matter>s/ consulta legal</p>
-            </div>
-            <p class="coupon__note">
-              Compartinos tus datos y una breve descripción. El estudio revisa la
-              información para coordinar una respuesta inicial.
-            </p>
+        <div class="contact__intro">
+          <h2 id="contact-title">Contanos tu caso</h2>
+          <p class="contact__note">
+            Compartinos tus datos y una breve descripción. El estudio revisa la
+            información para coordinar una respuesta inicial.
+          </p>
+          <div class="caratula" aria-live="polite">
+            <p class="caratula__label">Autos caratulados</p>
+            <p class="caratula__name" data-caratula-name>Tu nombre</p>
+            <p class="caratula__matter" data-caratula-matter>s/ consulta legal</p>
           </div>
-          <form class="lead-form" id="leadForm" action="#" method="post">
-            <input type="hidden" name="utm_source" data-param="utm_source" />
-            <input type="hidden" name="utm_medium" data-param="utm_medium" />
-            <input type="hidden" name="utm_campaign" data-param="utm_campaign" />
-            <input type="hidden" name="utm_content" data-param="utm_content" />
-            <input type="hidden" name="utm_term" data-param="utm_term" />
-            <input type="hidden" name="gclid" data-param="gclid" />
-            <input type="hidden" name="gbraid" data-param="gbraid" />
-            <input type="hidden" name="wbraid" data-param="wbraid" />
-            <input type="hidden" name="msclkid" data-param="msclkid" />
-            <input type="hidden" name="fbclid" data-param="fbclid" />
+        </div>
+        <form class="lead-form" id="leadForm" action="#" method="post">
+          <input type="hidden" name="utm_source" data-param="utm_source" />
+          <input type="hidden" name="utm_medium" data-param="utm_medium" />
+          <input type="hidden" name="utm_campaign" data-param="utm_campaign" />
+          <input type="hidden" name="utm_content" data-param="utm_content" />
+          <input type="hidden" name="utm_term" data-param="utm_term" />
+          <input type="hidden" name="gclid" data-param="gclid" />
+          <input type="hidden" name="gbraid" data-param="gbraid" />
+          <input type="hidden" name="wbraid" data-param="wbraid" />
+          <input type="hidden" name="msclkid" data-param="msclkid" />
+          <input type="hidden" name="fbclid" data-param="fbclid" />
+          <label>
+            Nombre y apellido
+            <input
+              name="nombre"
+              autocomplete="name"
+              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
+              title="Solo letras, sin números"
+              required
+            />
+          </label>
+          <label>
+            Teléfono / WhatsApp
+            <input
+              name="telefono"
+              type="tel"
+              autocomplete="tel"
+              inputmode="numeric"
+              pattern="[0-9]{6,15}"
+              title="Solo números, sin espacios ni guiones"
+              required
+            />
+          </label>
+          <label class="full">
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label class="full">
+            Servicio por el que consulta
+            <select name="servicio" required>
+              <option value="">Seleccionar</option>
+              <option>Derecho Comercial</option>
+              <option>Derecho Laboral y ART</option>
+              <option>Derecho Administrativo</option>
+              <option>Derecho de Daños</option>
+              <option>Sucesiones</option>
+              <option>Asesoramiento Empresarial</option>
+              <option>Otro tema legal</option>
+            </select>
+          </label>
+          <fieldset class="full art-fields" id="artFields" hidden>
+            <legend>Si tu consulta es por accidente laboral / ART</legend>
             <label>
-              Nombre y apellido
-              <input
-                name="nombre"
-                autocomplete="name"
-                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
-                title="Solo letras, sin números"
-                required
-              />
-            </label>
-            <label>
-              Teléfono / WhatsApp
-              <input
-                name="telefono"
-                type="tel"
-                autocomplete="tel"
-                inputmode="numeric"
-                pattern="[0-9]{6,15}"
-                title="Solo números, sin espacios ni guiones"
-                required
-              />
-            </label>
-            <label class="full">
-              Email
-              <input name="email" type="email" autocomplete="email" required />
-            </label>
-            <label class="full">
-              Servicio por el que consulta
-              <select name="servicio" required>
+              ¿Estás en blanco?
+              <select name="art_en_blanco">
                 <option value="">Seleccionar</option>
-                <option>Derecho Comercial</option>
-                <option>Derecho Laboral y ART</option>
-                <option>Derecho Administrativo</option>
-                <option>Derecho de Daños</option>
-                <option>Sucesiones</option>
-                <option>Asesoramiento Empresarial</option>
-                <option>Otro tema legal</option>
+                <option>Sí</option>
+                <option>No</option>
+                <option>No estoy seguro/a</option>
               </select>
             </label>
-            <fieldset class="full art-fields" id="artFields" hidden>
-              <legend>Si tu consulta es por accidente laboral / ART</legend>
-              <label>
-                ¿Estás en blanco?
-                <select name="art_en_blanco">
-                  <option value="">Seleccionar</option>
-                  <option>Sí</option>
-                  <option>No</option>
-                  <option>No estoy seguro/a</option>
-                </select>
-              </label>
-              <label>
-                ¿La ART te atendió?
-                <select name="art_atencion">
-                  <option value="">Seleccionar</option>
-                  <option>Sí</option>
-                  <option>No</option>
-                </select>
-              </label>
-              <label>
-                ¿Te dieron el alta?
-                <select name="art_alta">
-                  <option value="">Seleccionar</option>
-                  <option>Sí</option>
-                  <option>No</option>
-                </select>
-              </label>
-            </fieldset>
-            <label class="full">
-              Breve descripción del caso
-              <textarea
-                name="descripcion"
-                rows="4"
-                placeholder="Ej.: qué ocurrió, cuándo, y qué documentación tenés disponible."
-                required
-              ></textarea>
+            <label>
+              ¿La ART te atendió?
+              <select name="art_atencion">
+                <option value="">Seleccionar</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
             </label>
-            <label class="checkbox full">
-              <input type="checkbox" name="acepta" required />
-              <span>
-                Acepto ser contactado/a por BOQV Abogados en relación con esta
-                consulta, conforme a la
-                <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.
-              </span>
+            <label>
+              ¿Te dieron el alta?
+              <select name="art_alta">
+                <option value="">Seleccionar</option>
+                <option>Sí</option>
+                <option>No</option>
+              </select>
             </label>
-            <button class="btn btn-send full" type="submit">Enviar consulta</button>
-            <p class="form-status full" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
-        </div>
+          </fieldset>
+          <label class="full">
+            Breve descripción del caso
+            <textarea
+              name="descripcion"
+              rows="4"
+              placeholder="Ej.: qué ocurrió, cuándo, y qué documentación tenés disponible."
+              required
+            ></textarea>
+          </label>
+          <label class="checkbox full">
+            <input type="checkbox" name="acepta" required />
+            <span>
+              Acepto ser contactado/a por BOQV Abogados en relación con esta
+              consulta, conforme a la
+              <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.
+            </span>
+          </label>
+          <button class="btn btn-primary full" type="submit">Enviar consulta</button>
+          <p class="form-status full" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
       </section>
 
       <section id="faq" class="faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Preguntas frecuentes</h2>
-        <div class="faq__text">
-          <p><strong>¿En qué zonas atiende BOQV?</strong> El estudio atiende consultas vinculadas a La Plata, Ciudad Autónoma de Buenos Aires y Provincia de Buenos Aires.</p>
-          <p><strong>¿Qué áreas trabaja el estudio?</strong> Derecho comercial, derecho laboral y ART, derecho administrativo, derecho de daños, sucesiones y asesoramiento empresarial.</p>
-          <p><strong>¿Atienden a trabajadores y a empleadores?</strong> Sí. En derecho laboral y ART asesoramos tanto a trabajadores como a empleadores.</p>
-          <p><strong>¿Cómo es el primer contacto?</strong> Completás el formulario o escribís por WhatsApp. Revisamos la información y coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
-          <p><strong>¿La consulta garantiza un resultado?</strong> No. Cada caso requiere una evaluación particular. El primer contacto sirve para ordenar la información y orientar los próximos pasos.</p>
-        </div>
+        <div class="qa qa--head"><h2 id="faq-title">Preguntas frecuentes</h2></div>
+        <div class="qa"><h3>¿En qué zonas atiende BOQV?</h3><p>El estudio atiende consultas vinculadas a La Plata, Ciudad Autónoma de Buenos Aires y Provincia de Buenos Aires.</p></div>
+        <div class="qa"><h3>¿Qué áreas trabaja el estudio?</h3><p>Derecho comercial, derecho laboral y ART, derecho administrativo, derecho de daños, sucesiones y asesoramiento empresarial.</p></div>
+        <div class="qa"><h3>¿Atienden a trabajadores y a empleadores?</h3><p>Sí. En derecho laboral y ART asesoramos tanto a trabajadores como a empleadores.</p></div>
+        <div class="qa"><h3>¿Cómo es el primer contacto?</h3><p>Completás el formulario o escribís por WhatsApp. Revisamos la información y coordinamos un primer contacto para orientarte sobre los próximos pasos.</p></div>
+        <div class="qa"><h3>¿La consulta garantiza un resultado?</h3><p>No. Cada caso requiere una evaluación particular. El primer contacto sirve para ordenar la información y orientar los próximos pasos.</p></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <svg class="scallops" viewBox="0 0 1200 50" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path d="M0 50A50 50 0 0 1 100 50A50 50 0 0 1 200 50A50 50 0 0 1 300 50A50 50 0 0 1 400 50A50 50 0 0 1 500 50A50 50 0 0 1 600 50A50 50 0 0 1 700 50A50 50 0 0 1 800 50A50 50 0 0 1 900 50A50 50 0 0 1 1000 50A50 50 0 0 1 1100 50A50 50 0 0 1 1200 50Z" />
-      </svg>
-      <div class="card-back">
-        <div class="card-back__msg">
-          <p class="card-back__sign">Te esperamos</p>
-          <p>
-            La información enviada se usa únicamente para responder la consulta
-            y coordinar un contacto inicial.
-          </p>
-          <p><a href="privacidad.html">Política de privacidad</a></p>
-        </div>
-        <address class="card-back__addr">
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Calle%2012%20623%20Piso%201%20Oficina%202%2C%20La%20Plata%2C%20Buenos%20Aires%2C%20Argentina"
-            target="_blank"
-            rel="noopener"
-          >Calle 12 N°623, Piso 1 Oficina 2, La Plata</a>
-          <a href="tel:+5492215942574">+54 9 2215 94-2574</a>
-          <a href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
-          <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram @estudioboqv</a>
-        </address>
-        <p class="card-back__imprint">BOQV Abogados · Berridi, Ortiz Quesada &amp; Vaccari · boqv.com.ar</p>
+      <div class="foot__top">
+        <p>Calle 12 N°623, Piso 1 Oficina 2, La Plata</p>
+        <p>Atención en La Plata, CABA y Provincia de Buenos Aires</p>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+      <div class="foot__main">
+        <a class="foot__phone" href="tel:+5492215942574" aria-label="Llamar al +54 9 2215 94-2574">2215 94-2574</a>
+        <a class="foot__mail" href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
+      </div>
+      <div class="foot__meta">
+        <p><a href="privacidad.html">Política de privacidad</a> · <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram</a></p>
+        <p>BOQV Abogados · Berridi, Ortiz Quesada &amp; Vaccari</p>
+        <p>La Plata, 2026</p>
       </div>
     </footer>
     <a class="whatsapp-float" data-whatsapp-link href="#consulta" aria-label="Contactar por WhatsApp">
@@ -594,6 +572,6 @@
       <a href="#consulta">Formulario</a>
     </div>
     <script src="script.js?v=20260710-4"></script>
-    <script src="ui.js?v=20261025-1" defer></script>
+    <script src="ui.js?v=20261025-2" defer></script>
   </body>
 </html>

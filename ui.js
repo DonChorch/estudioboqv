@@ -33,25 +33,39 @@
   form?.addEventListener("change", syncCaratula);
   syncCaratula();
 
+  /* ── Barra móvil: se aparta al bajar leyendo y vuelve al subir ── */
+  const bar = document.querySelector(".mobile-bar");
+  if (bar) {
+    let lastY = window.scrollY;
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        const away = y > 480 && y > lastY + 4;
+        if (away || y < lastY - 4 || y <= 480) bar.classList.toggle("is-away", away);
+        lastY = y;
+      },
+      { passive: true }
+    );
+  }
+
   /* ── Entradas: título, texto y pieza de cada sección, escalonados ── */
   const groups = [
-    [".hero__head > *", 0],
-    [".folder", 0],
-    [".front__action > *", 0],
+    [".hero__side > *", 0],
+    [".hero__facts", 0],
     [".areas h2", 0],
-    [".areas__aside > *", 0],
+    [".areas__aside", 0],
     [".area", 0],
-    [".team h2", 0],
-    [".team__lead", 0],
-    [".tile", 0],
-    [".process__text > *", 0],
-    [".slip__stage", 0],
-    [".slip__total", 0],
-    [".coupon__intro > *", 0],
+    [".studio__facts > div", 0],
+    [".studio__text > *", 0],
+    [".trio__item", 0],
+    [".flow__text > *", 0],
+    [".flow__svg", 0],
+    [".flow__steps li", 0],
+    [".contact__intro > *", 0],
     [".lead-form", 0],
-    [".faq h2", 0],
-    [".faq__text p", 0],
-    [".card-back > *", 0],
+    [".qa", 0],
+    [".foot__main > *", 0],
   ];
 
   const targets = [];
@@ -73,9 +87,6 @@
 
   const show = (el) => {
     el.classList.add("is-in");
-    if (el.classList.contains("folder")) {
-      window.setTimeout(() => el.classList.add("is-settled"), 900);
-    }
   };
 
   const observer = new IntersectionObserver(
