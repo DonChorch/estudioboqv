@@ -49,7 +49,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261025-2" />
+    <link rel="stylesheet" href="styles.css?v=20261025-3" />
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -251,6 +251,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2SK7KFD"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <a class="skip" href="#contenido">Saltar al contenido</a>
     <header class="site-header" aria-label="Encabezado principal">
       <a class="brand" href="#inicio" aria-label="BOQV Abogados, inicio">
         <span class="brand__name">BOQV</span>
@@ -260,58 +261,34 @@
         <a href="#servicios">Áreas</a>
         <a href="#equipo">Estudio</a>
         <a href="#proceso">Cómo trabajamos</a>
+        <a href="#faq">Preguntas</a>
       </nav>
       <a class="header-cta btn btn-primary" href="#consulta">Consultar</a>
     </header>
     <main id="inicio">
-      <section class="hero" aria-label="Presentación">
-        <div class="mosaic" aria-hidden="false">
-          <img class="m m--a" src="assets/hero.jpg" alt="Los tres abogados de BOQV en su estudio" width="784" height="607" />
-          <img class="m m--b" src="assets/juan-cruz-berridi.jpg" alt="Juan Cruz Berridi" width="800" height="1200" />
-          <span class="m m--c" aria-hidden="true"></span>
-          <span class="m m--d" aria-hidden="true"></span>
-          <img class="m m--e" src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada" width="800" height="1200" />
-          <span class="m m--g" aria-hidden="true"></span>
-          <img class="m m--f" src="assets/maximiliano-vaccari.jpg" alt="Maximiliano Vaccari" width="800" height="1200" />
-        </div>
-        <div class="hero__body">
-          <div class="hero__side">
-            <p class="hero__lead">
-              Estudio jurídico con atención en La Plata, CABA y Provincia de
-              Buenos Aires: conflictos laborales y ART, sucesiones, daños y
-              asesoramiento a empresas.
-            </p>
-            <div class="hero__actions" aria-label="Acciones principales">
-              <a class="btn btn-primary" data-whatsapp-link href="#consulta">Consultar por WhatsApp</a>
-              <a class="btn btn-secondary" href="#consulta">Dejar mi consulta</a>
-            </div>
+      <section class="hero" id="contenido" tabindex="-1" aria-label="Presentación">
+        <div class="hero__text">
+          <h1 class="title"><span class="title__line"><span>Abogados en</span></span> <span class="title__line"><span>La Plata</span></span></h1>
+          <p class="hero__lead">
+            Estudio jurídico con atención en La Plata, CABA y Provincia de
+            Buenos Aires: conflictos laborales y ART, sucesiones, daños y
+            asesoramiento a empresas.
+          </p>
+          <div class="hero__actions" aria-label="Acciones principales">
+            <a class="btn btn-primary" data-whatsapp-link href="#consulta">Consultar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#consulta">Dejar mi consulta</a>
           </div>
-          <div class="hero__main">
-            <h1 class="title"><span class="title__line"><span>Abogados en</span></span><span class="title__line"><span>La Plata</span></span></h1>
-            <ul class="hero__facts" aria-label="Datos destacados">
-              <li>Más de diez años de trayectoria</li>
-              <li>Atención directa del estudio</li>
-              <li>Evaluación inicial del caso</li>
-            </ul>
-          </div>
+          <ul class="hero__facts" aria-label="Datos destacados">
+            <li>Más de diez años de trayectoria</li>
+            <li>Atención directa del estudio</li>
+            <li>Evaluación inicial del caso</li>
+          </ul>
         </div>
+        <img class="hero__photo" src="assets/hero.jpg" alt="Los tres abogados de BOQV en su estudio" width="784" height="607" />
       </section>
 
       <section id="servicios" class="areas" aria-labelledby="areas-title">
-        <div class="areas__side">
-          <h2 id="areas-title">Casos que atendemos</h2>
-          <div class="conversion-strip areas__aside">
-            <h3>¿Querés que revisemos tu situación?</h3>
-            <p>
-              Dejanos tus datos o escribinos por WhatsApp. El equipo de BOQV
-              ordena la información para coordinar un primer contacto.
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn-primary" data-whatsapp-link href="#consulta">WhatsApp</a>
-              <a class="btn btn-secondary" href="#consulta">Completar formulario</a>
-            </div>
-          </div>
-        </div>
+        <h2 id="areas-title">Áreas de trabajo</h2>
         <ul class="areas__list" aria-label="Áreas de consulta">
           <li id="laboral" class="area">
             <h3>Derecho Laboral y ART</h3>
@@ -367,11 +344,6 @@
 
       <section id="equipo" class="studio" aria-labelledby="studio-title">
         <h2 id="studio-title" class="visually-hidden">El estudio</h2>
-        <dl class="studio__facts">
-          <div><dt>Dónde</dt><dd>Calle 12 N°623, La Plata</dd></div>
-          <div><dt>Desde hace</dt><dd>más de diez años</dd></div>
-          <div><dt>Cómo llegar a nosotros</dt><dd><a href="tel:+5492215942574">+54 9 2215 94-2574</a></dd></div>
-        </dl>
         <div class="studio__text">
           <p class="studio__lead">
             <strong>BOQV Abogados</strong> es el estudio de Berridi, Ortiz
@@ -430,11 +402,11 @@
             Compartinos tus datos y una breve descripción. El estudio revisa la
             información para coordinar una respuesta inicial.
           </p>
-          <div class="caratula" aria-live="polite">
-            <p class="caratula__label">Autos caratulados</p>
-            <p class="caratula__name" data-caratula-name>Tu nombre</p>
-            <p class="caratula__matter" data-caratula-matter>s/ consulta legal</p>
-          </div>
+          <address class="contact__direct">
+            <a class="contact__phone" href="tel:+5492215942574">+54 9 2215 94-2574</a>
+            <a href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Calle%2012%20623%20Piso%201%20Oficina%202%2C%20La%20Plata%2C%20Buenos%20Aires%2C%20Argentina" target="_blank" rel="noopener">Calle 12 N°623, Piso 1 Oficina 2, La Plata</a>
+          </address>
         </div>
         <form class="lead-form" id="leadForm" action="#" method="post">
           <input type="hidden" name="utm_source" data-param="utm_source" />
@@ -547,20 +519,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="foot__top">
-        <p>Calle 12 N°623, Piso 1 Oficina 2, La Plata</p>
-        <p>Atención en La Plata, CABA y Provincia de Buenos Aires</p>
-        <a href="#inicio">Volver arriba ↑</a>
-      </div>
-      <div class="foot__main">
-        <a class="foot__phone" href="tel:+5492215942574" aria-label="Llamar al +54 9 2215 94-2574">2215 94-2574</a>
-        <a class="foot__mail" href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
-      </div>
-      <div class="foot__meta">
-        <p><a href="privacidad.html">Política de privacidad</a> · <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram</a></p>
-        <p>BOQV Abogados · Berridi, Ortiz Quesada &amp; Vaccari</p>
-        <p>La Plata, 2026</p>
-      </div>
+      <p class="foot__name"><strong>BOQV Abogados</strong> · Berridi, Ortiz Quesada &amp; Vaccari</p>
+      <p class="foot__links"><a href="privacidad.html">Política de privacidad</a> · <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram</a> · <a href="#inicio">Volver arriba</a></p>
+      <p class="foot__city">La Plata · 2026</p>
     </footer>
     <a class="whatsapp-float" data-whatsapp-link href="#consulta" aria-label="Contactar por WhatsApp">
       <img src="assets/WhatsApp_icon.png" alt="" aria-hidden="true" />
@@ -570,6 +531,6 @@
       <a href="#consulta">Formulario</a>
     </div>
     <script src="script.js?v=20260710-4"></script>
-    <script src="ui.js?v=20261025-2" defer></script>
+    <script src="ui.js?v=20261025-3" defer></script>
   </body>
 </html>

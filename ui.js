@@ -51,12 +51,9 @@
 
   /* ── Entradas: título, texto y pieza de cada sección, escalonados ── */
   const groups = [
-    [".hero__side > *", 0],
-    [".hero__facts", 0],
+    [".hero__text > *", 0],
     [".areas h2", 0],
-    [".areas__aside", 0],
     [".area", 0],
-    [".studio__facts > div", 0],
     [".studio__text > *", 0],
     [".trio__item", 0],
     [".flow__text > *", 0],
@@ -64,7 +61,6 @@
     [".contact__intro > *", 0],
     [".lead-form", 0],
     [".qa", 0],
-    [".foot__main > *", 0],
   ];
 
   const targets = [];
