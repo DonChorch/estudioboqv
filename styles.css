@@ -201,8 +201,6 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
 .flow__text { display: grid; grid-template-columns: var(--axis) 1fr; align-items: start; }
 .flow__text h2 { max-width: 8ch; }
 .flow__text p { max-width: 36ch; padding-top: 0.6em; }
-.flow__svg { display: block; width: 100%; height: auto; }
-.flow__svg--v { display: none; }
 .flow__steps { display: grid; grid-template-columns: repeat(3, 1fr); }
 .flow__steps li { display: grid; gap: 8px; padding-right: 32px; align-content: start; }
 .flow__steps p { color: var(--on-dark-soft); max-width: 30ch; }
@@ -367,8 +365,6 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
   .trio__item { display: grid; grid-template-columns: 38% 1fr; align-items: stretch; }
   .trio__item img { aspect-ratio: auto; height: 100%; min-height: 200px; }
   .trio__cap { align-content: end; padding: 16px; }
-  .flow__svg--h { display: none; }
-  .flow__svg--v { display: block; max-width: 300px; }
   .flow__steps { grid-template-columns: 1fr; gap: 24px; }
   .lead-form { grid-template-columns: 1fr; padding: 24px 16px; margin-inline: calc(var(--m) * -1); max-width: none; }
   .art-fields { grid-template-columns: 1fr; }

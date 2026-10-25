@@ -60,7 +60,6 @@
     [".studio__text > *", 0],
     [".trio__item", 0],
     [".flow__text > *", 0],
-    [".flow__svg", 0],
     [".flow__steps li", 0],
     [".contact__intro > *", 0],
     [".lead-form", 0],
