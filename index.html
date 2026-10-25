@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es-AR">
   <head>
     <meta charset="utf-8" />
@@ -46,7 +46,10 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/favicon.svg" />
     <link rel="preload" href="assets/hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260710-9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261025-1" />
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -249,425 +252,348 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="site-header" aria-label="Encabezado principal">
-      <a class="brand" href="#inicio" aria-label="BOQV Abogados">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#servicios">Áreas</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#proceso">Cómo trabajamos</a>
+      </nav>
+      <a class="brand" href="#inicio" aria-label="BOQV Abogados, inicio">
         <span class="brand__name">BOQV</span>
         <span class="brand__sub">Abogados</span>
       </a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#consulta">Consulta</a>
-      </nav>
       <a class="header-cta" href="#consulta">Consultar</a>
     </header>
-
     <main id="inicio">
-      <section class="hero section-dark">
-        <div class="hero__content">
-          <p class="eyebrow">Berridi, Ortiz Quesada &amp; Vaccari</p>
-          <h1>Estudio jurídico especializado en conflictos laborales, sucesiones y asesoramiento de empresas</h1>
+      <section class="hero" aria-label="Presentación">
+        <div class="hero__head">
+          <h1>Abogados en La Plata</h1>
           <p class="hero__lead">
-            Atención en consultas vinculadas a ART, sucesiones, derecho
-            comercial, daños y asesoramiento empresarial.
+            Estudio jurídico con atención en La Plata, CABA y Provincia de
+            Buenos Aires: conflictos laborales y ART, sucesiones, daños y
+            asesoramiento a empresas.
           </p>
-          <div class="hero__actions" aria-label="Acciones principales">
-            <a class="btn btn-primary" data-whatsapp-link href="#consulta">
-              <span aria-hidden="true">↗</span>
-              WhatsApp
-            </a>
-            <a class="btn btn-secondary" href="#consulta">
-              Formulario
-            </a>
-          </div>
-          <ul class="hero__facts" aria-label="Datos destacados">
-            <li>Más de diez años de trayectoria</li>
-            <li>Atención directa del estudio</li>
-            <li>Evaluación inicial del caso</li>
-          </ul>
         </div>
-
-        <aside class="hero-card" aria-label="Servicios prioritarios">
-          <div class="hero-card__top">
-            <span>BO</span>
-            <span>QV</span>
+        <div class="stack" aria-label="Áreas de consulta">
+          <a class="folder folder--1" href="#laboral"><span class="folder__tab">Laboral y ART</span></a>
+          <a class="folder folder--2" href="#sucesiones"><span class="folder__tab">Sucesiones</span></a>
+          <a class="folder folder--3" href="#empresarial"><span class="folder__tab">Empresas</span></a>
+          <a class="folder folder--4" href="#servicios"><span class="folder__tab">Otras áreas</span></a>
+          <div class="folder folder--front">
+            <span class="folder__tab">Tu consulta</span>
+            <div class="front">
+              <div class="front__action">
+                <p class="front__lead">Contanos qué pasó. Evaluamos el caso y te respondemos.</p>
+                <div class="hero__actions" aria-label="Acciones principales">
+                  <a class="btn btn-primary" data-whatsapp-link href="#consulta">Consultar por WhatsApp</a>
+                  <a class="btn btn-secondary" href="#consulta">Dejar mi consulta</a>
+                </div>
+                <ul class="hero__facts" aria-label="Datos destacados">
+                  <li>Más de diez años de trayectoria</li>
+                  <li>Atención directa del estudio</li>
+                  <li>Evaluación inicial del caso</li>
+                </ul>
+              </div>
+              <img
+                class="front__photo"
+                src="assets/hero.jpg"
+                alt="Los tres abogados de BOQV en su estudio"
+                width="784"
+                height="607"
+              />
+            </div>
           </div>
-          <h2>Áreas de consulta</h2>
-          <div class="service-pills">
-            <a href="#comercial">Derecho Comercial</a>
-            <a href="#laboral">Derecho Laboral y ART</a>
-            <a href="#administrativo">Derecho Administrativo</a>
-            <a href="#danos">Derecho de Daños</a>
-            <a href="#sucesiones">Sucesiones</a>
-            <a href="#empresarial">Asesoramiento Empresarial</a>
-          </div>
-        </aside>
+        </div>
       </section>
 
-      <section id="servicios" class="services">
-        <div class="section-heading">
-          <p class="eyebrow">Servicios prioritarios</p>
-          <h2>Consultas frecuentes que podemos ayudarte a ordenar</h2>
-        </div>
-        <div class="service-grid">
-          <article id="comercial" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-comercial">
-              <span class="card-arrow" aria-hidden="true">↗</span>
-              <h3>Derecho Comercial</h3>
-            </button>
-            <div class="service-card__panel" id="panel-comercial" hidden>
-              <p>
-                Asesoramiento en contratos, operaciones comerciales, sociedades,
-                reclamos y decisiones legales vinculadas a la actividad empresaria.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Comercial">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
+      <section id="servicios" class="areas" aria-labelledby="areas-title">
+        <h2 id="areas-title">Estos son los casos que atendemos</h2>
+        <div class="areas__grid">
+          <div class="conversion-strip areas__aside">
+            <h3>¿Querés que revisemos tu situación?</h3>
+            <p>
+              Dejanos tus datos o escribinos por WhatsApp. El equipo de BOQV
+              ordena la información para coordinar un primer contacto.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn-primary" data-whatsapp-link href="#consulta">WhatsApp</a>
+              <a class="btn btn-secondary" href="#consulta">Completar formulario</a>
             </div>
-          </article>
-          <article id="laboral" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-laboral">
-              <span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <ul class="areas__list" aria-label="Áreas de consulta">
+            <li id="laboral" class="area">
               <h3>Derecho Laboral y ART</h3>
-            </button>
-            <div class="service-card__panel" id="panel-laboral" hidden>
               <p>
                 Asesoramos tanto a trabajadores como a empleadores: accidentes
                 de trabajo, reclamos ante ART y situaciones laborales.
               </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Laboral y ART">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-          <article id="administrativo" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-administrativo">
-              <span class="card-arrow" aria-hidden="true">↗</span>
+              <a class="service-card__cta" href="#consulta" data-service="Derecho Laboral y ART" aria-label="Consultar por Derecho Laboral y ART">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+            <li id="sucesiones" class="area">
+              <h3>Sucesiones</h3>
+              <p>
+                Acompañamiento para iniciar, continuar o destrabar una sucesión
+                con una mirada práctica sobre los pasos a seguir.
+              </p>
+              <a class="service-card__cta" href="#consulta" data-service="Sucesiones" aria-label="Consultar por Sucesiones">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+            <li id="empresarial" class="area">
+              <h3>Asesoramiento Empresarial</h3>
+              <p>
+                Seguimiento legal para empresas: contratos, prevención de
+                conflictos, decisiones comerciales y temas societarios.
+              </p>
+              <a class="service-card__cta" href="#consulta" data-service="Asesoramiento Empresarial" aria-label="Consultar por Asesoramiento Empresarial">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+            <li id="danos" class="area area--group">
+              <h3>Derecho de Daños</h3>
+              <p>
+                Análisis de reclamos por daños, responsabilidades y
+                documentación necesaria para evaluar los pasos posibles.
+              </p>
+              <a class="service-card__cta" href="#consulta" data-service="Derecho de Daños" aria-label="Consultar por Derecho de Daños">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+            <li id="comercial" class="area">
+              <h3>Derecho Comercial</h3>
+              <p>
+                Asesoramiento en contratos, operaciones comerciales, sociedades,
+                reclamos y decisiones legales vinculadas a la actividad
+                empresaria.
+              </p>
+              <a class="service-card__cta" href="#consulta" data-service="Derecho Comercial" aria-label="Consultar por Derecho Comercial">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+            <li id="administrativo" class="area">
               <h3>Derecho Administrativo</h3>
-            </button>
-            <div class="service-card__panel" id="panel-administrativo" hidden>
               <p>
                 Trámites y reclamos ante organismos públicos, gestiones
                 administrativas y respuestas a intimaciones o sanciones.
               </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho Administrativo">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-          <article id="danos" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-danos">
-              <span class="card-arrow" aria-hidden="true">↗</span>
-              <h3>Derecho de Daños</h3>
-            </button>
-            <div class="service-card__panel" id="panel-danos" hidden>
-              <p>
-                Análisis de reclamos por daños, responsabilidades y documentación
-                necesaria para evaluar los pasos posibles.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Derecho de Daños">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-          <article id="sucesiones" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-sucesiones">
-              <span class="card-arrow" aria-hidden="true">↗</span>
-              <h3>Sucesiones</h3>
-            </button>
-            <div class="service-card__panel" id="panel-sucesiones" hidden>
-              <p>
-                Acompañamiento para iniciar, continuar o destrabar una sucesión con
-                una mirada práctica sobre los pasos a seguir.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Sucesiones">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-          <article id="empresarial" class="service-card">
-            <button type="button" class="service-card__toggle" aria-expanded="false" aria-controls="panel-empresarial">
-              <span class="card-arrow" aria-hidden="true">↗</span>
-              <h3>Asesoramiento Empresarial</h3>
-            </button>
-            <div class="service-card__panel" id="panel-empresarial" hidden>
-              <p>
-                Seguimiento legal para empresas: contratos, prevención de conflictos,
-                decisiones comerciales y temas societarios.
-              </p>
-              <a class="service-card__cta" href="#consulta" data-service="Asesoramiento Empresarial">
-                Consultar por este tema <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
+              <a class="service-card__cta" href="#consulta" data-service="Derecho Administrativo" aria-label="Consultar por Derecho Administrativo">Consultar <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="conversion-strip" aria-label="Consulta rápida">
-        <div>
-          <p class="eyebrow">Consulta inicial</p>
-          <h2>¿Querés que revisemos tu situación?</h2>
-          <p>
-            Dejanos tus datos o escribinos por WhatsApp. El equipo de BOQV
-            ordenará la información para coordinar un primer contacto.
-          </p>
-        </div>
-        <div class="conversion-strip__actions">
-          <a class="btn btn-primary" data-whatsapp-link href="#consulta">
-            <span aria-hidden="true">↗</span>
-            WhatsApp
-          </a>
-          <a class="btn btn-secondary" href="#consulta">Completar formulario</a>
-        </div>
-      </section>
-
-      <section id="equipo" class="team-section" aria-label="Equipo BOQV">
-        <div class="brand-copy">
-          <p class="eyebrow">BOQV Abogados</p>
-          <h2>Un estudio jurídico con atención cercana y criterio profesional</h2>
-          <p>
-            Berridi, Ortiz Quesada &amp; Vaccari brinda servicios legales integrales
-            con más de diez años de trayectoria y una forma de trabajo enfocada en
-            escuchar, ordenar y responder con claridad.
-          </p>
-        </div>
-        <div class="team-grid" aria-label="Integrantes del estudio">
-          <article class="team-card">
-            <img src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div>
-              <h3>Alvaro Ortiz Quesada</h3>
-              <p>Derecho comercial</p>
-            </div>
-          </article>
-          <article class="team-card">
+      <section id="equipo" class="team" aria-labelledby="team-title">
+        <h2 id="team-title">El equipo de BOQV</h2>
+        <p class="team__lead">
+          Berridi, Ortiz Quesada &amp; Vaccari brinda servicios legales
+          integrales con más de diez años de trayectoria y una forma de trabajo
+          enfocada en escuchar, ordenar y responder con claridad.
+        </p>
+        <ul class="tiles" aria-label="Integrantes del estudio">
+          <li class="tile tile--1">
             <img src="assets/juan-cruz-berridi.jpg" alt="Juan Cruz Berridi, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div>
+            <div class="tile__cap">
               <h3>Juan Cruz Berridi</h3>
               <p>Derecho laboral y administrativo</p>
             </div>
-          </article>
-          <article class="team-card">
+          </li>
+          <li class="tile tile--2">
+            <img src="assets/alvaro-ortiz-quesada.jpg" alt="Alvaro Ortiz Quesada, abogado de BOQV" width="800" height="1200" loading="lazy" />
+            <div class="tile__cap">
+              <h3>Alvaro Ortiz Quesada</h3>
+              <p>Derecho comercial</p>
+            </div>
+          </li>
+          <li class="tile tile--3">
             <img src="assets/maximiliano-vaccari.jpg" alt="Maximiliano Vaccari, abogado de BOQV" width="800" height="1200" loading="lazy" />
-            <div>
+            <div class="tile__cap">
               <h3>Maximiliano Vaccari</h3>
               <p>Derecho de daños y sucesiones</p>
             </div>
-          </article>
-        </div>
+          </li>
+        </ul>
       </section>
 
-      <section id="proceso" class="process section-dark">
-        <div class="section-heading">
-          <p class="eyebrow">Cómo trabajamos</p>
-          <h2>Primero entendemos tu caso, después evaluamos el camino</h2>
-        </div>
-        <div class="steps">
-          <article>
-            <span>01</span>
-            <h3>Nos contás qué pasó</h3>
-            <p>Completás el formulario o enviás un mensaje con los datos principales.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Revisamos el caso</h3>
-            <p>Identificamos la información relevante y qué documentación puede hacer falta.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Te respondemos</h3>
-            <p>Coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
-          </article>
-        </div>
-      </section>
-
-
-      <section id="consulta" class="contact">
-        <div class="contact__intro">
-          <p class="eyebrow">Formulario de consulta</p>
-          <h2>Dejanos tu consulta y te contactamos</h2>
+      <section id="proceso" class="process" aria-labelledby="process-title">
+        <div class="process__text">
+          <h2 id="process-title">Cómo trabajamos</h2>
           <p>
-            Compartinos tus datos y una breve descripción. El estudio revisará la
-            información para coordinar una respuesta inicial.
+            Primero entendemos tu caso, después evaluamos el camino. Así queda
+            ordenado desde el primer mensaje.
           </p>
         </div>
-
-        <form class="lead-form" id="leadForm" action="#" method="post">
-          <input type="hidden" name="utm_source" data-param="utm_source" />
-          <input type="hidden" name="utm_medium" data-param="utm_medium" />
-          <input type="hidden" name="utm_campaign" data-param="utm_campaign" />
-          <input type="hidden" name="utm_content" data-param="utm_content" />
-          <input type="hidden" name="utm_term" data-param="utm_term" />
-          <input type="hidden" name="gclid" data-param="gclid" />
-          <input type="hidden" name="gbraid" data-param="gbraid" />
-          <input type="hidden" name="wbraid" data-param="wbraid" />
-          <input type="hidden" name="msclkid" data-param="msclkid" />
-          <input type="hidden" name="fbclid" data-param="fbclid" />
-
-          <label>
-            Nombre y apellido
-            <input
-              name="nombre"
-              autocomplete="name"
-              pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' -]+"
-              title="Solo letras, sin números"
-              required
-            />
-          </label>
-          <label>
-            Teléfono / WhatsApp
-            <input
-              name="telefono"
-              type="tel"
-              autocomplete="tel"
-              inputmode="numeric"
-              pattern="[0-9]{6,15}"
-              title="Solo números, sin espacios ni guiones"
-              required
-            />
-          </label>
-          <label class="full">
-            Email
-            <input name="email" type="email" autocomplete="email" required />
-          </label>
-          <label class="full">
-            Servicio por el que consulta
-            <select name="servicio" required>
-              <option value="">Seleccionar</option>
-              <option>Derecho Comercial</option>
-              <option>Derecho Laboral y ART</option>
-              <option>Derecho Administrativo</option>
-              <option>Derecho de Daños</option>
-              <option>Sucesiones</option>
-              <option>Asesoramiento Empresarial</option>
-              <option>Otro tema legal</option>
-            </select>
-          </label>
-
-          <fieldset class="full art-fields" id="artFields" hidden>
-            <legend>Si tu consulta es por accidente laboral / ART</legend>
-            <label>
-              ¿Estás en blanco?
-              <select name="art_en_blanco">
-                <option value="">Seleccionar</option>
-                <option>Sí</option>
-                <option>No</option>
-                <option>No estoy seguro/a</option>
-              </select>
-            </label>
-            <label>
-              ¿La ART te atendió?
-              <select name="art_atencion">
-                <option value="">Seleccionar</option>
-                <option>Sí</option>
-                <option>No</option>
-              </select>
-            </label>
-            <label>
-              ¿Te dieron el alta?
-              <select name="art_alta">
-                <option value="">Seleccionar</option>
-                <option>Sí</option>
-                <option>No</option>
-              </select>
-            </label>
-          </fieldset>
-
-          <label class="full">
-            Breve descripción del caso
-            <textarea
-              name="descripcion"
-              rows="5"
-              placeholder="Ej.: qué ocurrió, cuándo, y qué documentación tenés disponible."
-              required
-            ></textarea>
-          </label>
-
-          <label class="checkbox full">
-            <input type="checkbox" name="acepta" required />
-            <span>
-              Acepto ser contactado/a por BOQV Abogados en relación con esta
-              consulta, conforme a la
-              <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.
-            </span>
-          </label>
-
-          <button class="btn btn-primary full" type="submit">
-            Enviar consulta
-          </button>
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
+        <ol class="slip" aria-label="Pasos de la consulta">
+          <li class="slip__stage">
+            <h3>Primero</h3>
+            <p class="slip__row"><span>Nos contás qué pasó</span><span class="slip__who">Vos</span></p>
+            <p class="slip__note">Completás el formulario o enviás un mensaje con los datos principales.</p>
+          </li>
+          <li class="slip__stage">
+            <h3>Después</h3>
+            <p class="slip__row"><span>Revisamos el caso</span><span class="slip__who">BOQV</span></p>
+            <p class="slip__note">Identificamos la información relevante y qué documentación puede hacer falta.</p>
+          </li>
+          <li class="slip__stage">
+            <h3>Por último</h3>
+            <p class="slip__row"><span>Te respondemos</span><span class="slip__who">BOQV</span></p>
+            <p class="slip__note">Coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
+          </li>
+          <li class="slip__total">Al final tenés un primer contacto y un camino claro</li>
+        </ol>
       </section>
-      <section id="faq" class="faq-section">
-        <div class="section-heading">
-          <p class="eyebrow">Atención legal en Buenos Aires</p>
-          <h2>Consultas legales en CABA y Provincia de Buenos Aires</h2>
-          <p>
-            BOQV Abogados acompaña consultas de personas, familias y empresas con
-            foco en una evaluación inicial clara y un seguimiento profesional.
-          </p>
+
+      <section id="consulta" class="contact" aria-labelledby="contact-title">
+        <div class="coupon">
+          <div class="coupon__intro">
+            <h2 id="contact-title">Abrí tu consulta</h2>
+            <div class="caratula" aria-live="polite">
+              <p class="caratula__label">Autos caratulados</p>
+              <p class="caratula__name" data-caratula-name>Tu nombre</p>
+              <p class="caratula__matter" data-caratula-matter>s/ consulta legal</p>
+            </div>
+            <p class="coupon__note">
+              Compartinos tus datos y una breve descripción. El estudio revisa la
+              información para coordinar una respuesta inicial.
+            </p>
+          </div>
+          <form class="lead-form" id="leadForm" action="#" method="post">
+            <input type="hidden" name="utm_source" data-param="utm_source" />
+            <input type="hidden" name="utm_medium" data-param="utm_medium" />
+            <input type="hidden" name="utm_campaign" data-param="utm_campaign" />
+            <input type="hidden" name="utm_content" data-param="utm_content" />
+            <input type="hidden" name="utm_term" data-param="utm_term" />
+            <input type="hidden" name="gclid" data-param="gclid" />
+            <input type="hidden" name="gbraid" data-param="gbraid" />
+            <input type="hidden" name="wbraid" data-param="wbraid" />
+            <input type="hidden" name="msclkid" data-param="msclkid" />
+            <input type="hidden" name="fbclid" data-param="fbclid" />
+            <label>
+              Nombre y apellido
+              <input
+                name="nombre"
+                autocomplete="name"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
+                title="Solo letras, sin números"
+                required
+              />
+            </label>
+            <label>
+              Teléfono / WhatsApp
+              <input
+                name="telefono"
+                type="tel"
+                autocomplete="tel"
+                inputmode="numeric"
+                pattern="[0-9]{6,15}"
+                title="Solo números, sin espacios ni guiones"
+                required
+              />
+            </label>
+            <label class="full">
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="full">
+              Servicio por el que consulta
+              <select name="servicio" required>
+                <option value="">Seleccionar</option>
+                <option>Derecho Comercial</option>
+                <option>Derecho Laboral y ART</option>
+                <option>Derecho Administrativo</option>
+                <option>Derecho de Daños</option>
+                <option>Sucesiones</option>
+                <option>Asesoramiento Empresarial</option>
+                <option>Otro tema legal</option>
+              </select>
+            </label>
+            <fieldset class="full art-fields" id="artFields" hidden>
+              <legend>Si tu consulta es por accidente laboral / ART</legend>
+              <label>
+                ¿Estás en blanco?
+                <select name="art_en_blanco">
+                  <option value="">Seleccionar</option>
+                  <option>Sí</option>
+                  <option>No</option>
+                  <option>No estoy seguro/a</option>
+                </select>
+              </label>
+              <label>
+                ¿La ART te atendió?
+                <select name="art_atencion">
+                  <option value="">Seleccionar</option>
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </label>
+              <label>
+                ¿Te dieron el alta?
+                <select name="art_alta">
+                  <option value="">Seleccionar</option>
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </label>
+            </fieldset>
+            <label class="full">
+              Breve descripción del caso
+              <textarea
+                name="descripcion"
+                rows="4"
+                placeholder="Ej.: qué ocurrió, cuándo, y qué documentación tenés disponible."
+                required
+              ></textarea>
+            </label>
+            <label class="checkbox full">
+              <input type="checkbox" name="acepta" required />
+              <span>
+                Acepto ser contactado/a por BOQV Abogados en relación con esta
+                consulta, conforme a la
+                <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.
+              </span>
+            </label>
+            <button class="btn btn-send full" type="submit">Enviar consulta</button>
+            <p class="form-status full" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
-        <div class="faq-grid">
-          <article>
-            <h3>¿En qué zonas atiende BOQV?</h3>
-            <p>
-              El estudio atiende consultas vinculadas a Ciudad Autónoma de Buenos
-              Aires y Provincia de Buenos Aires.
-            </p>
-          </article>
-          <article>
-            <h3>¿Qué áreas trabaja el estudio?</h3>
-            <p>
-              Derecho comercial, derecho laboral y ART, derecho administrativo,
-              derecho de daños, sucesiones y asesoramiento empresarial.
-            </p>
-          </article>
-          <article>
-            <h3>¿La consulta garantiza un resultado?</h3>
-            <p>
-              No. Cada caso requiere una evaluación particular. El primer contacto
-              sirve para ordenar la información y orientar los próximos pasos.
-            </p>
-          </article>
+      </section>
+
+      <section id="faq" class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <div class="faq__text">
+          <p><strong>¿En qué zonas atiende BOQV?</strong> El estudio atiende consultas vinculadas a La Plata, Ciudad Autónoma de Buenos Aires y Provincia de Buenos Aires.</p>
+          <p><strong>¿Qué áreas trabaja el estudio?</strong> Derecho comercial, derecho laboral y ART, derecho administrativo, derecho de daños, sucesiones y asesoramiento empresarial.</p>
+          <p><strong>¿Atienden a trabajadores y a empleadores?</strong> Sí. En derecho laboral y ART asesoramos tanto a trabajadores como a empleadores.</p>
+          <p><strong>¿Cómo es el primer contacto?</strong> Completás el formulario o escribís por WhatsApp. Revisamos la información y coordinamos un primer contacto para orientarte sobre los próximos pasos.</p>
+          <p><strong>¿La consulta garantiza un resultado?</strong> No. Cada caso requiere una evaluación particular. El primer contacto sirve para ordenar la información y orientar los próximos pasos.</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <strong>BOQV Abogados</strong>
-        <span>Berridi, Ortiz Quesada &amp; Vaccari</span>
-        <address class="footer-contact">
+      <svg class="scallops" viewBox="0 0 1200 50" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 50A50 50 0 0 1 100 50A50 50 0 0 1 200 50A50 50 0 0 1 300 50A50 50 0 0 1 400 50A50 50 0 0 1 500 50A50 50 0 0 1 600 50A50 50 0 0 1 700 50A50 50 0 0 1 800 50A50 50 0 0 1 900 50A50 50 0 0 1 1000 50A50 50 0 0 1 1100 50A50 50 0 0 1 1200 50Z" />
+      </svg>
+      <div class="card-back">
+        <div class="card-back__msg">
+          <p class="card-back__sign">Te esperamos</p>
+          <p>
+            La información enviada se usa únicamente para responder la consulta
+            y coordinar un contacto inicial.
+          </p>
+          <p><a href="privacidad.html">Política de privacidad</a></p>
+        </div>
+        <address class="card-back__addr">
           <a
             href="https://www.google.com/maps/search/?api=1&query=Calle%2012%20623%20Piso%201%20Oficina%202%2C%20La%20Plata%2C%20Buenos%20Aires%2C%20Argentina"
             target="_blank"
             rel="noopener"
-          >
-            Calle 12 N°623, Piso 1 Oficina 2, La Plata
-          </a>
+          >Calle 12 N°623, Piso 1 Oficina 2, La Plata</a>
           <a href="tel:+5492215942574">+54 9 2215 94-2574</a>
           <a href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
-          <a href="https://boqv.com.ar" target="_blank" rel="noopener">boqv.com.ar</a>
+          <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram @estudioboqv</a>
         </address>
+        <p class="card-back__imprint">BOQV Abogados · Berridi, Ortiz Quesada &amp; Vaccari · boqv.com.ar</p>
       </div>
-      <p>
-        La información enviada será utilizada únicamente para responder la consulta
-        y coordinar un contacto inicial.
-        <a href="privacidad.html">Política de privacidad</a>
-      </p>
     </footer>
-
     <a class="whatsapp-float" data-whatsapp-link href="#consulta" aria-label="Contactar por WhatsApp">
       <img src="assets/WhatsApp_icon.png" alt="" aria-hidden="true" />
     </a>
-
     <div class="mobile-bar" aria-label="Acciones rápidas">
       <a data-whatsapp-link href="#consulta">WhatsApp</a>
       <a href="#consulta">Formulario</a>
     </div>
-
     <script src="script.js?v=20260710-4"></script>
+    <script src="ui.js?v=20261025-1" defer></script>
   </body>
 </html>
-
-
-
-

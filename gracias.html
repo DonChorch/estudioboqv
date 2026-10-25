@@ -12,7 +12,10 @@
     <meta name="theme-color" content="#123a34" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/favicon.svg" />
-    <link rel="stylesheet" href="styles.css?v=20260710-9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261025-1" />
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,64 +59,64 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="site-header" aria-label="Encabezado principal">
-      <a class="brand" href="index.html" aria-label="BOQV Abogados">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html#servicios">Áreas</a>
+        <a href="index.html#proceso">Cómo trabajamos</a>
+      </nav>
+      <a class="brand" href="index.html" aria-label="BOQV Abogados, inicio">
         <span class="brand__name">BOQV</span>
         <span class="brand__sub">Abogados</span>
       </a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#proceso">Proceso</a>
-      </nav>
       <a class="header-cta" href="index.html">Volver al inicio</a>
     </header>
 
     <main>
-      <section class="thanks section-dark" aria-label="Confirmación de envío">
-        <div class="thanks__content">
-          <p class="eyebrow">Consulta enviada</p>
-          <h1>¡Gracias! Recibimos tu consulta</h1>
-          <p class="hero__lead">
-            El equipo de BOQV va a revisar la información y se va a poner en
-            contacto a la brevedad para coordinar una primera evaluación.
-          </p>
-          <ul class="hero__facts" aria-label="Próximos pasos">
-            <li>Revisamos tu caso</li>
-            <li>Ordenamos la documentación</li>
-            <li>Te contactamos</li>
-          </ul>
-          <div class="hero__actions" aria-label="Acciones">
-            <a class="btn btn-primary" data-whatsapp-link href="#">
-              <span aria-hidden="true">↗</span>
-              Escribinos por WhatsApp mientras tanto
-            </a>
-            <a class="btn btn-secondary" href="index.html">Volver al inicio</a>
-          </div>
+      <section class="plain plain--thanks" aria-labelledby="gracias-title">
+        <div class="plain__text">
+        <h1 id="gracias-title">¡Gracias! Recibimos tu consulta</h1>
+        <p>
+          El equipo de BOQV va a revisar la información y se va a poner en
+          contacto a la brevedad para coordinar una primera evaluación.
+        </p>
+        <ul class="hero__facts" aria-label="Próximos pasos">
+          <li>Revisamos tu caso</li>
+          <li>Ordenamos la documentación</li>
+          <li>Te contactamos</li>
+        </ul>
+        <div class="hero__actions" aria-label="Acciones">
+          <a class="btn btn-primary" data-whatsapp-link href="#">Escribinos por WhatsApp mientras tanto</a>
+          <a class="btn btn-secondary" href="index.html">Volver al inicio</a>
         </div>
+        </div>
+        <img class="plain__photo" src="assets/hero.jpg" alt="Los tres abogados de BOQV en su estudio" width="784" height="607" />
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <strong>BOQV Abogados</strong>
-        <span>Berridi, Ortiz Quesada &amp; Vaccari</span>
-        <address class="footer-contact">
+      <svg class="scallops" viewBox="0 0 1200 50" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 50A50 50 0 0 1 100 50A50 50 0 0 1 200 50A50 50 0 0 1 300 50A50 50 0 0 1 400 50A50 50 0 0 1 500 50A50 50 0 0 1 600 50A50 50 0 0 1 700 50A50 50 0 0 1 800 50A50 50 0 0 1 900 50A50 50 0 0 1 1000 50A50 50 0 0 1 1100 50A50 50 0 0 1 1200 50Z" />
+      </svg>
+      <div class="card-back">
+        <div class="card-back__msg">
+          <p class="card-back__sign">Te esperamos</p>
+          <p>
+            La información enviada se usa únicamente para responder la consulta
+            y coordinar un contacto inicial.
+          </p>
+          <p><a href="privacidad.html">Política de privacidad</a></p>
+        </div>
+        <address class="card-back__addr">
           <a
             href="https://www.google.com/maps/search/?api=1&query=Calle%2012%20623%20Piso%201%20Oficina%202%2C%20La%20Plata%2C%20Buenos%20Aires%2C%20Argentina"
             target="_blank"
             rel="noopener"
-          >
-            Calle 12 N°623, Piso 1 Oficina 2, La Plata
-          </a>
+          >Calle 12 N°623, Piso 1 Oficina 2, La Plata</a>
           <a href="tel:+5492215942574">+54 9 2215 94-2574</a>
           <a href="mailto:administracion@boqv.com.ar">administracion@boqv.com.ar</a>
-          <a href="https://boqv.com.ar" target="_blank" rel="noopener">boqv.com.ar</a>
+          <a href="https://www.instagram.com/estudioboqv/" target="_blank" rel="noopener">Instagram @estudioboqv</a>
         </address>
+        <p class="card-back__imprint">BOQV Abogados · Berridi, Ortiz Quesada &amp; Vaccari · boqv.com.ar</p>
       </div>
-      <p>
-        La información enviada será utilizada únicamente para responder la consulta
-        y coordinar un contacto inicial.
-        <a href="privacidad.html">Política de privacidad</a>
-      </p>
     </footer>
 
     <a class="whatsapp-float" data-whatsapp-link href="#" aria-label="Contactar por WhatsApp">
